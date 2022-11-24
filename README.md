@@ -7,9 +7,9 @@ such as PNG.
 
 ## Preview
 
-![Full GAP Logo](gaplogo.png)
+![Full GAP Logo](gaplogo.svg)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Reduced GAP Logo](gaplogo-reduced.png)
+![Reduced GAP Logo](gaplogo-reduced.svg)
 
 Logo without text (e.g. for icons):
 
