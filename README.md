@@ -7,14 +7,15 @@ such as PNG.
 
 ## Preview
 
-![GAP Logo proposal](gaplogo.png)
+![Full GAP Logo](gaplogo.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![Reduced GAP Logo](gaplogo-reduced.png)
 
 Logo without text (e.g. for icons):
 
 | 32x32  | 48x48 | 64x64 | 128x128 |
 | ------------- | ------------- | ------------- | ------------- |
-| ![GAP Logo without text, 32x32](gaplogo-notext32.png "32x32") |  ![GAP Logo without text, 48x48](gaplogo-notext48.png "48x48") | ![GAP Logo without text, 64x64](gaplogo-notext64.png "64x64") | ![GAP Logo without text, 128x128](gaplogo-notext128.png "128x128") |
-
+| ![GAP Icon 32x32](gaplogo-notext32.png "32x32") |  ![GAP Icon 48x48](gaplogo-notext48.png "48x48") | ![GAP Icon 64x64](gaplogo-notext64.png "64x64") | ![GAP Icon 128x128](gaplogo-notext128.png "128x128") |
 
 ## Rationale
 

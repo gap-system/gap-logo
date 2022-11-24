@@ -1,6 +1,7 @@
 TEXOPTS := --synctex=1 -shell-escape --file-line-error --halt-on-error
 
 all: gaplogo.pdf gaplogo.svg gaplogo.png gaplogo-notext.pdf gaplogo-notext.png \
+ gaplogo-reduced.pdf gaplogo-reduced.png \
  gaplogo-notext16.png gaplogo-notext32.png gaplogo-notext48.png gaplogo-notext64.png gaplogo-notext128.png
 
 gaplogo.pdf: gaplogo.tex
@@ -11,6 +12,13 @@ gaplogo.png: gaplogo.pdf
 
 gaplogo.svg: gaplogo.pdf
 	pdf2svg $< $@
+
+
+gaplogo-reduced.pdf: gaplogo-reduced.tex
+	lualatex $(TEXOPTS) $<
+
+gaplogo-reduced.png: gaplogo-reduced.pdf
+	sips -s format png $< --out $@
 
 
 gaplogo-notext.pdf: gaplogo-notext.tex
