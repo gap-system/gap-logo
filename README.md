@@ -37,3 +37,21 @@ for, which further prevents confusion, but also is helpful to convey clearly
 what GAP is about. I also find the resulting look aesthetically pleasing, with
 the gentle slope introduced by the increasing length of the words "Groups",
 "Algorithms", and "Programming".
+
+As font I chose the [Ubuntu Font](https://design.ubuntu.com/font/). It is
+under a [liberal license](https://ubuntu.com/legal/font-licence) that is
+compatible with the open source spirit of the GAP project. Its design blurb
+states that it aims to "convey a precise, reliable and free attitude", which
+of course fits well with GAP, and I happen to think it indeed achieves these
+aims (but of course this is highly subjective).
+
+But I wanted a no-frills sans-serif font with clean curves; I found the Ubuntu
+font to be highly geometrical and it "fits" with the diagram part quite well.
+
+I also experimented with using the mono spaced variant, "Ubuntu Mono", but in
+the end found the look of the base font superior for our purposes.
+
+
+## License
+
+To be determined.
