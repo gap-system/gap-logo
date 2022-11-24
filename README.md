@@ -57,9 +57,9 @@ Dynkin diagram of type $D_3$, and then the group action is the triality
 automorphism which plays an important role in algebriac Lie theory, finite
 simple groups, geometry and more.
 
-The letters GAP feature prominently and arranged vertically. Since GAP is also
-a very famous fashion brand, I did not want to risk any chance of them being
-confuse. The "GAP" text in the logo of the fashion company is always
+The letters GAP feature prominently and are arranged vertically. Since GAP is
+also the name of a very famous fashion brand, I do not want them being
+confused. The "GAP" text in the logo of the fashion company is always
 horizontal, ours is vertical; they use a serif font, we use sans-serif; their
 font is very narrow and tall, ours has almost square shapped letters.
 
