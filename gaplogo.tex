@@ -1,4 +1,4 @@
-% !TEX TS-program = xelatex
+% !TEX TS-program = lualatex
 %\documentclass[class=minimal,border=0pt]{standalone}
 \documentclass[class=article,border=0pt]{standalone}
 \pdfvariable suppressoptionalinfo \numexpr32+64+512\relax
@@ -6,7 +6,8 @@
 \usepackage[svgnames]{xcolor}
 \usepackage{tikz}
 \usetikzlibrary{positioning}
-
+\usetikzlibrary{arrows.meta}
+ 
 \usepackage{fontspec}
 \setmainfont{Ubuntu}
 %\setmainfont{Ubuntu Mono}
@@ -19,22 +20,23 @@
 %\definecolor{gapcolor}{named}{DarkRed}
 
 \begin{document}
-\begin{tikzpicture}[ultra thick]
+%\begin{tikzpicture}[line width=2.4pt, >=stealth]
+\begin{tikzpicture}[line width=2.4pt, >={Stealth[inset=3pt, angle=60:10pt]}]
 
 \def \n {3}
 \def \radius {1cm}
-\def \margin {15} % margin in angles, depends on the radius
+\def \margin {20} % margin in angles, depends on the radius
 
   \node[draw, circle] (A) at (0:\radius) {};
-  \draw[<->, >=stealth] ({0+\margin}:\radius) 
+  \draw[<->] ({0+\margin}:\radius) 
     arc ({0+\margin}:{120-\margin}:\radius);
 
   \node[draw, circle] (B) at (120:\radius) {};
-  \draw[<->, >=stealth] ({120+\margin}:\radius) 
+  \draw[<->] ({120+\margin}:\radius) 
     arc ({120+\margin}:{240-\margin}:\radius);
 
   \node[draw, circle] (C) at (240:\radius) {};
-  \draw[<->, >=stealth] ({240+\margin}:\radius) 
+  \draw[<->] ({240+\margin}:\radius) 
     arc ({240+\margin}:{360-\margin}:\radius);
 
   \node[draw, circle] (Z) at (0,0) {};
@@ -42,9 +44,9 @@
   \draw (Z) -- (B);
   \draw (Z) -- (C);
 
-  \node[anchor=west] at (1.1, 0.8) {{\Huge\textcolor{gapcolor}{G}}{\LARGE{}\textcolor{black}{roups}}};
-  \node[anchor=west] at (1.1, 0  ) {{\Huge\textcolor{gapcolor}{A}}{\LARGE{}\textcolor{black}{lgorithms}}};
-  \node[anchor=west] at (1.1,-0.8) {{\Huge\textcolor{gapcolor}{P}}{\LARGE{}\textcolor{black}{rogramming}}};
+  \node[anchor=west] at (1.2, 0.8) {{\Huge\bf\textcolor{gapcolor}{G}}{\LARGE{}\textcolor{black}{roups}}};
+  \node[anchor=west] at (1.2, 0  ) {{\Huge\bf\textcolor{gapcolor}{A}}{\LARGE{}\textcolor{black}{lgorithms}}};
+  \node[anchor=west] at (1.2,-0.8) {{\Huge\bf\textcolor{gapcolor}{P}}{\LARGE{}\textcolor{black}{rogramming}}};
 
 %  \node[right=of A.east] (A) {{\Huge\textcolor{gapcolor}{A}}{\LARGE{}lgorithms}};
 %  \node[above=of A,anchor=west] (G) {{\Huge\textcolor{gapcolor}{G}}{\LARGE{}roups}};
