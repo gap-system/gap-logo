@@ -1,32 +1,21 @@
+# Requires:
+# - lualatex with tikz package
+# - pdftocairo from poppler
 TEXOPTS := --synctex=1 -shell-escape --file-line-error --halt-on-error
 
-all: gaplogo.pdf gaplogo.svg gaplogo.png gaplogo-notext.pdf gaplogo-notext.png \
- gaplogo-reduced.pdf gaplogo-reduced.png \
+all: gaplogo.pdf gaplogo.svg gaplogo.png \
+ gaplogo-notext.pdf gaplogo-notext.svg gaplogo-notext.png \
+ gaplogo-reduced.pdf gaplogo-reduced.svg gaplogo-reduced.png \
  gaplogo-notext16.png gaplogo-notext32.png gaplogo-notext48.png gaplogo-notext64.png gaplogo-notext128.png
 
-gaplogo.pdf: gaplogo.tex
+%.pdf: %.tex
 	lualatex $(TEXOPTS) $<
 
-gaplogo.png: gaplogo.pdf
-	sips -s format png $< --out $@
+%.png: %.pdf
+	pdftocairo -png -singlefile -r 300 $< $(basename $@ .png)
 
-gaplogo.svg: gaplogo.pdf
-	pdf2svg $< $@
-
-
-gaplogo-reduced.pdf: gaplogo-reduced.tex
-	lualatex $(TEXOPTS) $<
-
-gaplogo-reduced.png: gaplogo-reduced.pdf
-	sips -s format png $< --out $@
-
-
-gaplogo-notext.pdf: gaplogo-notext.tex
-	lualatex $(TEXOPTS) $<
-
-gaplogo-notext.png: gaplogo-notext.pdf
-	sips -s format png $< --out $@
-
+%.svg: %.pdf
+	pdftocairo -svg $< $@
 
 
 gaplogo-notext16.png: gaplogo-notext.pdf
