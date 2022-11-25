@@ -8,7 +8,7 @@ all: gaplogo.pdf gaplogo.svg gaplogo.png \
  gaplogo-reduced.pdf gaplogo-reduced.svg gaplogo-reduced.png \
  gaplogo-notext16.png gaplogo-notext32.png gaplogo-notext48.png gaplogo-notext64.png gaplogo-notext128.png
 
-%.pdf: %.tex
+%.pdf: %.tex gaplogo.tex
 	lualatex $(TEXOPTS) $<
 
 %.png: %.pdf
