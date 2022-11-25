@@ -1,12 +1,18 @@
 # Requires:
 # - lualatex with tikz package
 # - pdftocairo from poppler
+# - svg2png
 TEXOPTS := --synctex=1 -shell-escape --file-line-error --halt-on-error
 
-all: gaplogo.pdf gaplogo.svg gaplogo.png \
+DST = gaplogo.pdf gaplogo.svg gaplogo.png \
  gaplogo-notext.pdf gaplogo-notext.svg gaplogo-notext.png \
  gaplogo-reduced.pdf gaplogo-reduced.svg gaplogo-reduced.png \
- gaplogo-notext16.png gaplogo-notext32.png gaplogo-notext48.png gaplogo-notext64.png gaplogo-notext128.png
+ gaplogo-notext32.png gaplogo-notext48.png gaplogo-notext64.png gaplogo-notext128.png gaplogo-notext256.png
+
+all: $(DST)
+
+clean:
+	rm -f $(DST)
 
 %.pdf: %.tex gaplogo.tex
 	lualatex $(TEXOPTS) $<
@@ -17,18 +23,19 @@ all: gaplogo.pdf gaplogo.svg gaplogo.png \
 %.svg: %.pdf
 	pdftocairo -svg $< $@
 
+gaplogo-notext32.png: gaplogo-notext-small.svg
+	svg2png --width=32 --height=32 $< $@
 
-gaplogo-notext16.png: gaplogo-notext.pdf
-	sips -z 16 16 -s format png $< --out $@
+gaplogo-notext48.png: gaplogo-notext-small.svg
+	svg2png --width=48 --height=48 $< $@
 
-gaplogo-notext32.png: gaplogo-notext.pdf
-	sips -z 32 32 -s format png $< --out $@
+gaplogo-notext64.png: gaplogo-notext-small.svg
+	svg2png --width=64 --height=64 $< $@
 
-gaplogo-notext48.png: gaplogo-notext.pdf
-	sips -z 48 48 -s format png $< --out $@
+gaplogo-notext128.png: gaplogo-notext.svg
+	svg2png --width=128 --height=128 $< $@
 
-gaplogo-notext64.png: gaplogo-notext.pdf
-	sips -z 64 64 -s format png $< --out $@
+gaplogo-notext256.png: gaplogo-notext.svg
+	svg2png --width=256 --height=256 $< $@
 
-gaplogo-notext128.png: gaplogo-notext.pdf
-	sips -z 128 128 -s format png $< --out $@
+.PHONY: all clean

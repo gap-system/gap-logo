@@ -30,8 +30,15 @@
 \newcommand\extrastyle[1]{}
 \fi
 
+\ifx\SmallIconMode\undefined
+  \def \lw {2.4pt}
+\else
+  % thicker lines for tiny rendering sizes
+  \def \lw {2.9pt}
+\fi
+
 \begin{document}
-\begin{tikzpicture}[line width=2.4pt, >={Stealth[inset=3pt, angle=60:10pt]}]
+\begin{tikzpicture}[line width=\lw, >={Stealth[inset=3pt, angle=60:10pt]}]
 
   \def \radius {1cm}
   \def \margin {20} % margin in angles, depends on the radius
