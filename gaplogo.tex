@@ -1,23 +1,34 @@
 % !TEX TS-program = lualatex
 %\documentclass[class=minimal,border=0pt]{standalone}
 \documentclass[class=article,border=0pt]{standalone}
-\pdfvariable suppressoptionalinfo \numexpr32+64+512\relax
+\usepackage{iftex}
 
+\ifluatex
+  % instruct lualatex to generated a reproducible PDF, so e.g. no
+  % dates in it, to ensure re-running TeX produces an identical PDF
+  \pdfvariable suppressoptionalinfo \numexpr32+64+512\relax
+\fi
+
+% choose a color for the GAP text
 \usepackage[svgnames]{xcolor}
-\usepackage{tikz}
-\usetikzlibrary{positioning}
-\usetikzlibrary{arrows.meta}
- 
-\usepackage{fontspec}
-\setmainfont{Ubuntu}
-%\setmainfont{Ubuntu Mono}
-%\setsansfont{Ubuntu}% Ubuntu as sans - use \sffamily or \textsf{} as normal
-%\setmonofont{Ubuntu Mono}% Ubuntu Mono as 'typewriter' - use \ttfamily or \texttt{}
+  \definecolor{gapcolor}{named}{Crimson}
 
-%\definecolor{gapcolor}{named}{IndianRed}
-\definecolor{gapcolor}{named}{Crimson}
-%\definecolor{gapcolor}{named}{FireBrick}
-%\definecolor{gapcolor}{named}{DarkRed}
+\usepackage{fontspec}
+  \setmainfont{Ubuntu}
+
+\usepackage{tikz}
+  \usetikzlibrary{positioning}
+  \usetikzlibrary{arrows.meta}
+
+% style for the letter G, A, P
+\newcommand\gapstyle[1]{\textbf{\Huge\textcolor{gapcolor}{#1}}}
+
+% style for the remaining letters
+\ifx\ReducedMode\undefined
+\newcommand\extrastyle[1]{{\LARGE{}\textcolor{black}{#1}}}
+\else
+\newcommand\extrastyle[1]{}
+\fi
 
 \begin{document}
 \begin{tikzpicture}[line width=2.4pt, >={Stealth[inset=3pt, angle=60:10pt]}]
@@ -25,20 +36,24 @@
   \def \radius {1cm}
   \def \margin {20} % margin in angles, depends on the radius
 
-  \coordinate (A) at (0:\radius) {};
+  % set coordinates of the four circles, starting at the one on the right
+  \coordinate (A) at (00:\radius) {};
   \coordinate (B) at (120:\radius) {};
   \coordinate (C) at (240:\radius) {};
   \coordinate (Z) at (0,0) {};
+  
+  % draw the edges connecting the four circles / nodes
   \draw (Z) -- (A);
   \draw (Z) -- (B);
   \draw (Z) -- (C);
 
-  % the four circles
-  \node[draw, circle, fill=white] (Z) at (0,0) {};
-  \node[draw, circle, fill=white] (A1) at (0:\radius) {};
-  \node[draw, circle, fill=white] (B1) at (120:\radius) {};
-  \node[draw, circle, fill=white] (C1) at (240:\radius) {};
+  % draw the circles afterwards, overdrawing the lines
+  \node[draw, circle, fill=white] at (Z) {};
+  \node[draw, circle, fill=white] at (A) {};
+  \node[draw, circle, fill=white] at (B) {};
+  \node[draw, circle, fill=white] at (C) {};
 
+  % draw the three double-ended arrows which indicate swapping of the circles
   \draw[<->] ({0+\margin}:\radius) 
     arc ({0+\margin}:{120-\margin}:\radius);
 
@@ -48,9 +63,12 @@
   \draw[<->] ({240+\margin}:\radius) 
     arc ({240+\margin}:{360-\margin}:\radius);
 
-  \node[anchor=west] at (1.2, 0.8) {{\Huge\bf\textcolor{gapcolor}{G}}{\LARGE{}\textcolor{black}{roups}}};
-  \node[anchor=west] at (1.2, 0  ) {{\Huge\bf\textcolor{gapcolor}{A}}{\LARGE{}\textcolor{black}{lgorithms}}};
-  \node[anchor=west] at (1.2,-0.8) {{\Huge\bf\textcolor{gapcolor}{P}}{\LARGE{}\textcolor{black}{rogramming}}};
+\ifx\NoTextMode\undefined
+    % draw the GAP text
+    \node[anchor=west] at (1.2, 0.8) {\gapstyle{G}\extrastyle{roups}};
+    \node[anchor=west] at (1.2, 0  ) {\gapstyle{A}\extrastyle{lgorithms}};
+    \node[anchor=west] at (1.2,-0.8) {\gapstyle{P}\extrastyle{rogramming}};
+\fi
 
 \end{tikzpicture}
 
