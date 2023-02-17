@@ -48,17 +48,17 @@
   \coordinate (B) at (120:\radius) {};
   \coordinate (C) at (240:\radius) {};
   \coordinate (Z) at (0,0) {};
+
+  % draw the circles
+  \node[draw, circle] at (Z) {};
+  \node[draw, circle] at (A) {};
+  \node[draw, circle] at (B) {};
+  \node[draw, circle] at (C) {};
   
   % draw the edges connecting the four circles / nodes
-  \draw (Z) -- (A);
-  \draw (Z) -- (B);
-  \draw (Z) -- (C);
-
-  % draw the circles afterwards, overdrawing the lines
-  \node[draw, circle, fill=white] at (Z) {};
-  \node[draw, circle, fill=white] at (A) {};
-  \node[draw, circle, fill=white] at (B) {};
-  \node[draw, circle, fill=white] at (C) {};
+  \draw[shorten >= 2mm, shorten <=2mm] (Z) -- (A);
+  \draw[shorten >= 2mm, shorten <=2mm] (Z) -- (B);
+  \draw[shorten >= 2mm, shorten <=2mm] (Z) -- (C);
 
   % draw the three double-ended arrows which indicate swapping of the circles
   \draw[<->] ({0+\margin}:\radius) 
