@@ -12,7 +12,7 @@
 % choose a color for the GAP text
 \usepackage[svgnames]{xcolor}
   \definecolor{gapcolor}{named}{Crimson}
-  \definecolor{dynkincolor}{named}{NavyBlue}
+  \definecolor{dynkincolor}{named}{Indigo}
 
 \usepackage{fontspec}
   \setmainfont{Ubuntu}
@@ -70,20 +70,20 @@
   \draw[shorten >= 2mm, shorten <=2mm, dynkincolor] (Z) -- (C);
 
   % draw the three double-ended arrows which indicate swapping of the circles
-  \draw[<->, DeepSkyBlue] ({0+\margin}:\radius) 
+  \draw[<->, MediumOrchid] ({0+\margin}:\radius) 
     arc ({0+\margin}:{120-\margin}:\radius);
 
-  \draw[<->, CornflowerBlue] ({120+\margin}:\radius) 
+  \draw[<->, DarkOrchid] ({120+\margin}:\radius) 
     arc ({120+\margin}:{240-\margin}:\radius);
 
-  \draw[<->, SkyBlue] ({240+\margin}:\radius) 
+  \draw[<->, Orchid] ({240+\margin}:\radius) 
     arc ({240+\margin}:{360-\margin}:\radius);
 
 \ifx\NoTextMode\undefined
     % draw the GAP text
-    \node[anchor=west] at (1.2, 0.8) {\gapstyle{\textcolor{DeepSkyBlue}{G}}\extrastyle{roups}};
-    \node[anchor=west] at (1.2, 0  ) {\gapstyle{\textcolor{CornflowerBlue}{A}}\extrastyle{lgorithms}};
-    \node[anchor=west] at (1.2,-0.8) {\gapstyle{\textcolor{SkyBlue}{P}}\extrastyle{rogramming}};
+    \node[anchor=west] at (1.2, 0.8) {\gapstyle{\textcolor{MediumOrchid}{G}}\extrastyle{roups}};
+    \node[anchor=west] at (1.2, 0  ) {\gapstyle{\textcolor{DarkOrchid}{A}}\extrastyle{lgorithms}};
+    \node[anchor=west] at (1.2,-0.8) {\gapstyle{\textcolor{Orchid}{P}}\extrastyle{rogramming}};
 \fi
 
 \end{tikzpicture}
