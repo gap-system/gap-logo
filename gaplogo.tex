@@ -70,20 +70,20 @@
   \draw[shorten >= 2mm, shorten <=2mm, dynkincolor] (Z) -- (C);
 
   % draw the three double-ended arrows which indicate swapping of the circles
-  \draw[<->, DarkSeaGreen] ({0+\margin}:\radius) 
+  \draw[<->, DeepSkyBlue] ({0+\margin}:\radius) 
     arc ({0+\margin}:{120-\margin}:\radius);
 
-  \draw[<->, CadetBlue] ({120+\margin}:\radius) 
+  \draw[<->, CornflowerBlue] ({120+\margin}:\radius) 
     arc ({120+\margin}:{240-\margin}:\radius);
 
-  \draw[<->, DarkCyan] ({240+\margin}:\radius) 
+  \draw[<->, SkyBlue] ({240+\margin}:\radius) 
     arc ({240+\margin}:{360-\margin}:\radius);
 
 \ifx\NoTextMode\undefined
     % draw the GAP text
-    \node[anchor=west] at (1.2, 0.8) {\gapstyle{\textcolor{DarkSeaGreen}{G}}\extrastyle{roups}};
-    \node[anchor=west] at (1.2, 0  ) {\gapstyle{\textcolor{CadetBlue}{A}}\extrastyle{lgorithms}};
-    \node[anchor=west] at (1.2,-0.8) {\gapstyle{\textcolor{DarkCyan}{P}}\extrastyle{rogramming}};
+    \node[anchor=west] at (1.2, 0.8) {\gapstyle{\textcolor{DeepSkyBlue}{G}}\extrastyle{roups}};
+    \node[anchor=west] at (1.2, 0  ) {\gapstyle{\textcolor{CornflowerBlue}{A}}\extrastyle{lgorithms}};
+    \node[anchor=west] at (1.2,-0.8) {\gapstyle{\textcolor{SkyBlue}{P}}\extrastyle{rogramming}};
 \fi
 
 \end{tikzpicture}
