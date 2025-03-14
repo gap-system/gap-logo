@@ -1,0 +1,19 @@
+% !TEX TS-program = lualatex
+\usepackage{iftex}
+
+\ifluatex
+  % instruct lualatex to generated a reproducible PDF, so e.g. no
+  % dates in it, to ensure re-running TeX produces an identical PDF
+  \pdfvariable suppressoptionalinfo \numexpr32+64+512\relax
+\fi
+
+\usepackage[svgnames]{xcolor}
+
+\usepackage{fontspec}
+  \setmainfont{Ubuntu}
+
+\usepackage{tikz}
+  \usetikzlibrary{positioning}
+  \usetikzlibrary{bending}
+  \usetikzlibrary{shadows}
+  \usetikzlibrary{arrows.meta}

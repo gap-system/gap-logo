@@ -3,3 +3,6 @@
 *.fls
 *.log
 *.synctex*
+*.pdf
+*.png
+*.svg

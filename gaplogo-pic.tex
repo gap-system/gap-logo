@@ -1,0 +1,40 @@
+
+  % set coordinates of the four circles, starting at the one on the right
+  \coordinate (A) at (00:\radius) {};
+  \coordinate (B) at (120:\radius) {};
+  \coordinate (C) at (240:\radius) {};
+  \coordinate (Z) at (0,0) {};
+
+  % draw the circles
+  %\node[draw, circle, dynkincolor] at (Z) {};
+  %\node[draw, circle, dynkincolor] at (A) {};
+  %\node[draw, circle, dynkincolor] at (B) {};
+  %\node[draw, circle, dynkincolor] at (C) {};
+  
+  \path[draw=dynkincolor]
+        (Z) circle[radius=2.2mm]
+        (A) circle[radius=2.2mm]
+        (B) circle[radius=2.2mm]
+        (C) circle[radius=2.2mm];
+
+  % draw the edges connecting the four circles / nodes
+  \draw[shorten >= 2mm, shorten <=2mm, dynkincolor] (Z) -- (A);
+  \draw[shorten >= 2mm, shorten <=2mm, dynkincolor] (Z) -- (B);
+  \draw[shorten >= 2mm, shorten <=2mm, dynkincolor] (Z) -- (C);
+
+  % draw the three double-ended arrows which indicate swapping of the circles
+  \draw[<->, segment1color] ({0+\margin}:\radius) 
+    arc ({0+\margin}:{120-\margin}:\radius);
+
+  \draw[<->, segment2color] ({120+\margin}:\radius) 
+    arc ({120+\margin}:{240-\margin}:\radius);
+
+  \draw[<->, segment3color] ({240+\margin}:\radius) 
+    arc ({240+\margin}:{360-\margin}:\radius);
+
+\ifx\NoTextMode\undefined
+    % draw the GAP text
+    \node[anchor=west] at (1.2, 0.8) {\gapstyle{\textcolor{Gcolor}{G}}\extrastyle{roups}};
+    \node[anchor=west] at (1.2, 0  ) {\gapstyle{\textcolor{Acolor}{A}}\extrastyle{lgorithms}};
+    \node[anchor=west] at (1.2,-0.8) {\gapstyle{\textcolor{Pcolor}{P}}\extrastyle{rogramming}};
+\fi
