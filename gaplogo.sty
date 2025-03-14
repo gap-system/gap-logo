@@ -17,3 +17,14 @@
   \usetikzlibrary{bending}
   \usetikzlibrary{shadows}
   \usetikzlibrary{arrows.meta}
+
+
+% style for the letter G, A, P
+\newcommand\gapstyle[1]{\textbf{\Huge#1}}
+
+% style for the remaining letters
+\ifx\ReducedMode\undefined
+  \newcommand\extrastyle[1]{{\LARGE{}\textcolor{Black}{#1}}}
+\else
+  \newcommand\extrastyle[1]{}
+\fi
