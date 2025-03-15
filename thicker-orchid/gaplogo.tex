@@ -9,14 +9,12 @@
 \definecolor{Pcolor}{named}{Orchid}
 
 % base color for the logo, and the three circle arrows
-\definecolor{edge0color}{named}{Indigo}
-\definecolor{edge1color}{named}{Indigo}
-\definecolor{edge2color}{named}{Indigo}
-\definecolor{edge3color}{named}{Indigo}
+\tikzset{dynkinedge/.style={draw=Indigo}}
+\tikzset{dynkinnode/.append style={draw=Indigo}}
 
-\definecolor{arrow12color}{named}{MediumOrchid}
-\definecolor{arrow23color}{named}{DarkOrchid}
-\definecolor{arrow13color}{named}{Orchid}
+\tikzset{dynkinarrowAB/.style={MediumOrchid}}
+\tikzset{dynkinarrowAC/.style={DarkOrchid}}
+\tikzset{dynkinarrowBC/.style={Orchid}}
 
 % line thickness
 \ifx\SmallIconMode\undefined

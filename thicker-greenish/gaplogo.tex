@@ -9,14 +9,12 @@
 \definecolor{Pcolor}{named}{DarkCyan}
 
 % base color for the logo, and the three circle arrows
-\definecolor{edge0color}{named}{DarkSlateGrey}
-\definecolor{edge1color}{named}{DarkSlateGrey}
-\definecolor{edge2color}{named}{DarkSlateGrey}
-\definecolor{edge3color}{named}{DarkSlateGrey}
+\tikzset{dynkinedge/.style={draw=DarkSlateGrey}}
+\tikzset{dynkinnode/.append style={draw=DarkSlateGrey}}
 
-\definecolor{arrow12color}{named}{DarkSeaGreen}
-\definecolor{arrow23color}{named}{CadetBlue}
-\definecolor{arrow13color}{named}{DarkCyan}
+\tikzset{dynkinarrowAB/.style={DarkSeaGreen}}
+\tikzset{dynkinarrowAC/.style={CadetBlue}}
+\tikzset{dynkinarrowBC/.style={DarkCyan}}
 
 % line thickness
 \ifx\SmallIconMode\undefined

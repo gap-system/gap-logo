@@ -18,6 +18,10 @@
   \usetikzlibrary{shadows}
   \usetikzlibrary{arrows.meta}
 
+% colors for letter G, A, P in "GAP"
+\definecolor{Gcolor}{named}{Crimson}
+\definecolor{Acolor}{named}{Crimson}
+\definecolor{Pcolor}{named}{Crimson}
 
 % style for the letter G, A, P
 \newcommand\gapstyle[1]{\textbf{\Huge#1}}
@@ -29,17 +33,29 @@
   \newcommand\extrastyle[1]{}
 \fi
 
-% base color for the logo, and the three circle arrows
-\definecolor{node0color}{named}{white}
-\definecolor{node1color}{named}{white}
-\definecolor{node2color}{named}{white}
-\definecolor{node3color}{named}{white}
+% styles for the logo
 
-\definecolor{edge0color}{named}{Black}
-\definecolor{edge1color}{named}{Black}
-\definecolor{edge2color}{named}{Black}
-\definecolor{edge3color}{named}{Black}
+% base style for all four nodes
+\tikzset{dynkinnode/.style={draw=black}}
 
-\definecolor{arrow1color}{named}{Black}
-\definecolor{arrow2color}{named}{Black}
-\definecolor{arrow3color}{named}{Black}
+% concrete styles for the four nodes
+\tikzset{dynkinnodeZ/.style={dynkinnode}}
+\tikzset{dynkinnodeA/.style={dynkinnode}}
+\tikzset{dynkinnodeB/.style={dynkinnode}}
+\tikzset{dynkinnodeC/.style={dynkinnode}}
+
+% base style for all edges
+\tikzset{dynkinedge/.style={draw=black}}
+
+% concrete style for the three edges
+\tikzset{dynkinedgeA/.style={dynkinedge}}
+\tikzset{dynkinedgeB/.style={dynkinedge}}
+\tikzset{dynkinedgeC/.style={dynkinedge}}
+
+% base style for all arrows
+\tikzset{dynkinarrow/.style={draw=black}}
+
+% concrete style for the three edges
+\tikzset{dynkinarrowAB/.style={dynkinarrow}}
+\tikzset{dynkinarrowAC/.style={dynkinarrow}}
+\tikzset{dynkinarrowBC/.style={dynkinarrow}}

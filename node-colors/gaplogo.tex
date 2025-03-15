@@ -3,24 +3,13 @@
 
 \usepackage{../gaplogo}
 
-% colors for letter G, A, P in "GAP"
-\definecolor{Gcolor}{named}{Crimson}
-\definecolor{Acolor}{named}{Crimson}
-\definecolor{Pcolor}{named}{Crimson}
+% styles for the logo
+\tikzset{dynkinnodeZ/.append style={fill=Crimson}}
+\tikzset{dynkinnodeA/.append style={fill=ForestGreen}}
+\tikzset{dynkinnodeB/.append style={fill=DodgerBlue}}
+\tikzset{dynkinnodeC/.append style={fill=Gold}}
 
-% base color for the logo, and the three circle arrows
-\definecolor{node0color}{named}{Crimson}
-\definecolor{node1color}{named}{ForestGreen}
-\definecolor{node2color}{named}{DodgerBlue}
-\definecolor{node3color}{named}{Gold}
-
-\definecolor{edge1color}{named}{Black}
-\definecolor{edge2color}{named}{Black}
-\definecolor{edge3color}{named}{Black}
-
-\definecolor{arrow12color}{named}{LightSteelBlue}
-\definecolor{arrow23color}{named}{LightSteelBlue}
-\definecolor{arrow13color}{named}{LightSteelBlue}
+\tikzset{dynkinarrow/.style={LightSteelBlue}}
 
 
 % line thickness

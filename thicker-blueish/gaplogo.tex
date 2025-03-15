@@ -9,14 +9,12 @@
 \definecolor{Pcolor}{named}{SkyBlue}
 
 % base color for the logo, and the three circle arrows
-\definecolor{edge0color}{named}{NavyBlue}
-\definecolor{edge1color}{named}{NavyBlue}
-\definecolor{edge2color}{named}{NavyBlue}
-\definecolor{edge3color}{named}{NavyBlue}
+\tikzset{dynkinedge/.style={draw=NavyBlue}}
+\tikzset{dynkinnode/.append style={draw=NavyBlue}}
 
-\definecolor{arrow12color}{named}{DeepSkyBlue}
-\definecolor{arrow23color}{named}{CornflowerBlue}
-\definecolor{arrow13color}{named}{SkyBlue}
+\tikzset{dynkinarrowAB/.style={DeepSkyBlue}}
+\tikzset{dynkinarrowAC/.style={CornflowerBlue}}
+\tikzset{dynkinarrowBC/.style={SkyBlue}}
 
 % line thickness
 \ifx\SmallIconMode\undefined
