@@ -31,6 +31,31 @@ Logo without text (e.g. for icons):
 | ------------- | ------------- | ------------- | ------------- |
 | ![GAP Icon 32x32](thicker/gaplogo-notext32.png "32x32") |  ![GAP Icon 48x48](thicker/gaplogo-notext48.png "48x48") | ![GAP Icon 64x64](thicker/gaplogo-notext64.png "64x64") | ![GAP Icon 128x128](thicker/gaplogo-notext128.png "128x128") |
 
+
+### Node-colors variant
+
+![Full GAP Logo](node-colors/gaplogo.svg)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![Reduced GAP Logo](node-colors/gaplogo-reduced.svg)
+
+Logo without text (e.g. for icons):
+
+| 32x32  | 48x48 | 64x64 | 128x128 |
+| ------------- | ------------- | ------------- | ------------- |
+| ![GAP Icon 32x32](node-colors/gaplogo-notext32.png "32x32") |  ![GAP Icon 48x48](node-colors/gaplogo-notext48.png "48x48") | ![GAP Icon 64x64](node-colors/gaplogo-notext64.png "64x64") | ![GAP Icon 128x128](node-colors/gaplogo-notext128.png "128x128") |
+
+### Thicker lines + red variant
+
+![Full GAP Logo](thicker-red/gaplogo.svg)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![Reduced GAP Logo](thicker-red/gaplogo-reduced.svg)
+
+Logo without text (e.g. for icons):
+
+| 32x32  | 48x48 | 64x64 | 128x128 |
+| ------------- | ------------- | ------------- | ------------- |
+| ![GAP Icon 32x32](thicker-red/gaplogo-notext32.png "32x32") |  ![GAP Icon 48x48](thicker-red/gaplogo-notext48.png "48x48") | ![GAP Icon 64x64](thicker-red/gaplogo-notext64.png "64x64") | ![GAP Icon 128x128](thicker-red/gaplogo-notext128.png "128x128") |
+
 ### Thicker lines + blueish variant
 
 ![Full GAP Logo](thicker-blueish/gaplogo.svg)

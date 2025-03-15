@@ -4,7 +4,7 @@
 # - svg2png
 TEXOPTS := --synctex=1 -shell-escape --file-line-error --halt-on-error
 
-VARIANTS = classic/ thicker/ thicker-blueish/ thicker-greenish/ thicker-orchid/
+VARIANTS = classic/ thicker/ thicker-red/ thicker-blueish/ thicker-greenish/ thicker-orchid/ node-colors/
 
 FILE = gaplogo.pdf gaplogo.svg gaplogo.png \
  gaplogo-notext.pdf gaplogo-notext.svg gaplogo-notext.png \
