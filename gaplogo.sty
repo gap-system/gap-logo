@@ -22,13 +22,14 @@
 \definecolor{Gcolor}{named}{Crimson}
 \definecolor{Acolor}{named}{Crimson}
 \definecolor{Pcolor}{named}{Crimson}
+\definecolor{Tcolor}{named}{Black}
 
 % style for the letter G, A, P
 \newcommand\gapstyle[1]{\textbf{\Huge#1}}
 
 % style for the remaining letters
 \ifx\ReducedMode\undefined
-  \newcommand\extrastyle[1]{{\LARGE{}\textcolor{Black}{#1}}}
+  \newcommand\extrastyle[1]{{\LARGE{}\textcolor{Tcolor}{#1}}}
 \else
   \newcommand\extrastyle[1]{}
 \fi
