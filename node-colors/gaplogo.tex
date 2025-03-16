@@ -3,12 +3,24 @@
 
 \usepackage{../gaplogo}
 
+% for "dark mode"
+% TODO: turn this into a global switch
+\tikzset{dynkinnode/.style={draw=black}}
+\tikzset{dynkinedge/.style={draw=black}}
+\tikzset{dynkinarrow/.style={draw=black}}
+\definecolor{Tcolor}{named}{WhiteSmoke}
+
+
 % styles for the logo
 \tikzset{dynkinnodeZ/.append style={fill=Crimson}}
 \tikzset{dynkinnodeA/.append style={fill=ForestGreen}}
 \tikzset{dynkinnodeB/.append style={fill=DodgerBlue}}
 \tikzset{dynkinnodeC/.append style={fill=Gold}}
 
+%\tikzset{dynkinarrow/.style={dashed, line width=2.5pt, Straight Barb-Straight Barb}}
+%\tikzset{dynkinarrow/.style={line width=2.5pt, Triangle-Triangle}}
+%\tikzset{dynkinarrow/.style={line width=2.5pt, {Straight Barb}-{Straight Barb}}}
+%\tikzset{dynkinarrow/.style={line width=3.7pt}}
 
 % line thickness
 \ifx\SmallIconMode\undefined
