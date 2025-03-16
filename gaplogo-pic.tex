@@ -5,7 +5,7 @@
   \coordinate (C) at (240:\radius) {};
   \coordinate (Z) at (0,0) {};
 
-  % draw the node
+  % draw the nodes
   \path[dynkinnodeZ] (Z) circle[radius=2.2mm];
   \path[dynkinnodeA] (A) circle[radius=2.2mm];
   \path[dynkinnodeB] (B) circle[radius=2.2mm];
@@ -17,14 +17,27 @@
   \draw[shorten >= 2mm, shorten <=2mm, dynkinedgeC] (Z) -- (C);
 
   % draw the three double-ended arrows which indicate swapping of the circles
-  \draw[<->, dynkinarrowAB] ({0+\margin}:\radius)
-    arc ({0+\margin}:{120-\margin}:\radius);
 
-  \draw[<->, dynkinarrowBC] ({120+\margin}:\radius)
-    arc ({120+\margin}:{240-\margin}:\radius);
+  % Variant 1: circle arcs
+%  \draw[<->, dynkinarrowAB] ({0+\margin}:\radius)
+%    arc ({0+\margin}:{120-\margin}:\radius);
+%
+%  \draw[<->, dynkinarrowBC] ({120+\margin}:\radius)
+%    arc ({120+\margin}:{240-\margin}:\radius);
+%
+%  \draw[<->, dynkinarrowCA] ({240+\margin}:\radius)
+%    arc ({240+\margin}:{360-\margin}:\radius);
 
-  \draw[<->, dynkinarrowCA] ({240+\margin}:\radius)
-    arc ({240+\margin}:{360-\margin}:\radius);
+  % Variant 2: using Bézier curves
+  \coordinate (AB1) at ( 50:12mm) {};
+  \coordinate (AB2) at ( 70:12mm) {};
+  \coordinate (BC1) at (170:12mm) {};
+  \coordinate (BC2) at (190:12mm) {};
+  \coordinate (CA1) at (290:12mm) {};
+  \coordinate (CA2) at (310:12mm) {};
+  \draw [<->, shorten >=4mm, shorten <=4mm, dynkinarrowAB] (A) .. controls (AB1) and (AB2) .. (B);
+  \draw [<->, shorten >=4mm, shorten <=4mm, dynkinarrowBC] (B) .. controls (BC1) and (BC2) .. (C);
+  \draw [<->, shorten >=4mm, shorten <=4mm, dynkinarrowCA] (C) .. controls (CA1) and (CA2) .. (A);
 
 \ifx\NoTextMode\undefined
     % draw the GAP text
