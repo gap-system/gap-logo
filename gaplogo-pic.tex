@@ -1,15 +1,52 @@
+\def\radius {10mm}
+\def\noderadius {2.2mm}
+\def\outline {1pt}
+\def\arrowinset{4mm}
+
+\tikzset{arrowshadow/.style={WhiteSmoke, line width=\lw+2*\outline, >={Stealth[inset=3pt, angle=60:17pt, bend]}}}
 
   % set coordinates of the four circles, starting at the one on the right
-  \coordinate (A) at (00:\radius) {};
+  \coordinate (A) at (  0:\radius) {};
   \coordinate (B) at (120:\radius) {};
   \coordinate (C) at (240:\radius) {};
   \coordinate (Z) at (0,0) {};
 
+  \coordinate (AB1) at ( 50:\radius*1.2) {};
+  \coordinate (AB2) at ( 70:\radius*1.2) {};
+  \coordinate (BC1) at (170:\radius*1.2) {};
+  \coordinate (BC2) at (190:\radius*1.2) {};
+  \coordinate (CA1) at (290:\radius*1.2) {};
+  \coordinate (CA2) at (310:\radius*1.2) {};
+
+
+\ifx\DarkMode\undefined
+\else
+  %
+  % draw everything but slightly larger to get a white "outline"
+  %
+  
   % draw the nodes
-  \path[dynkinnodeZ] (Z) circle[radius=2.2mm];
-  \path[dynkinnodeA] (A) circle[radius=2.2mm];
-  \path[dynkinnodeB] (B) circle[radius=2.2mm];
-  \path[dynkinnodeC] (C) circle[radius=2.2mm];
+  \path[draw=WhiteSmoke,fill=WhiteSmoke] (Z) circle[radius=\noderadius+\outline];
+  \path[draw=WhiteSmoke,fill=WhiteSmoke] (A) circle[radius=\noderadius+\outline];
+  \path[draw=WhiteSmoke,fill=WhiteSmoke] (B) circle[radius=\noderadius+\outline];
+  \path[draw=WhiteSmoke,fill=WhiteSmoke] (C) circle[radius=\noderadius+\outline];
+
+  % draw the edges connecting the four circles / nodes
+  \draw[shorten >= 2mm, shorten <=2mm, dynkinedgeA,line width=\lw+2*\outline,draw=WhiteSmoke] (Z) -- (A);
+  \draw[shorten >= 2mm, shorten <=2mm, dynkinedgeB,line width=\lw+2*\outline,draw=WhiteSmoke] (Z) -- (B);
+  \draw[shorten >= 2mm, shorten <=2mm, dynkinedgeC,line width=\lw+2*\outline,draw=WhiteSmoke] (Z) -- (C);
+
+  \draw [<->, shorten >=4mm-\outline*2, shorten <=4mm-\outline*2, arrowshadow] (A) .. controls (AB1) and (AB2) .. (B);
+  \draw [<->, shorten >=4mm-\outline*2, shorten <=4mm-\outline*2, arrowshadow] (B) .. controls (BC1) and (BC2) .. (C);
+  \draw [<->, shorten >=4mm-\outline*2, shorten <=4mm-\outline*2, arrowshadow] (C) .. controls (CA1) and (CA2) .. (A);
+\fi
+
+
+  % draw the nodes
+  \path[dynkinnodeZ] (Z) circle[radius=\noderadius];
+  \path[dynkinnodeA] (A) circle[radius=\noderadius];
+  \path[dynkinnodeB] (B) circle[radius=\noderadius];
+  \path[dynkinnodeC] (C) circle[radius=\noderadius];
 
   % draw the edges connecting the four circles / nodes
   \draw[shorten >= 2mm, shorten <=2mm, dynkinedgeA] (Z) -- (A);
@@ -29,12 +66,6 @@
 %    arc ({240+\margin}:{360-\margin}:\radius);
 
   % Variant 2: using Bézier curves
-  \coordinate (AB1) at ( 50:12mm) {};
-  \coordinate (AB2) at ( 70:12mm) {};
-  \coordinate (BC1) at (170:12mm) {};
-  \coordinate (BC2) at (190:12mm) {};
-  \coordinate (CA1) at (290:12mm) {};
-  \coordinate (CA2) at (310:12mm) {};
   \draw [<->, shorten >=4mm, shorten <=4mm, dynkinarrowAB] (A) .. controls (AB1) and (AB2) .. (B);
   \draw [<->, shorten >=4mm, shorten <=4mm, dynkinarrowBC] (B) .. controls (BC1) and (BC2) .. (C);
   \draw [<->, shorten >=4mm, shorten <=4mm, dynkinarrowCA] (C) .. controls (CA1) and (CA2) .. (A);

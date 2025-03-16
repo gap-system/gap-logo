@@ -22,7 +22,11 @@
 \definecolor{Gcolor}{named}{Crimson}
 \definecolor{Acolor}{named}{Crimson}
 \definecolor{Pcolor}{named}{Crimson}
-\definecolor{Tcolor}{named}{Black}
+\ifx\DarkMode\undefined
+  \definecolor{Tcolor}{named}{Black}
+\else
+  \definecolor{Tcolor}{named}{WhiteSmoke}
+\fi
 
 % style for the letter G, A, P
 \newcommand\gapstyle[1]{\textbf{\Huge#1}}

@@ -1,15 +1,9 @@
 % !TEX TS-program = lualatex
 \documentclass[class=article,border=0pt]{standalone}
 
+%\def\DarkMode{}
+
 \usepackage{../gaplogo}
-
-% for "dark mode"
-% TODO: turn this into a global switch
-\tikzset{dynkinnode/.style={draw=black}}
-\tikzset{dynkinedge/.style={draw=black}}
-\tikzset{dynkinarrow/.style={draw=black}}
-\definecolor{Tcolor}{named}{WhiteSmoke}
-
 
 % styles for the logo
 \tikzset{dynkinnodeZ/.append style={fill=Crimson}}
@@ -33,8 +27,21 @@
 \begin{document}
 
 \begin{tikzpicture}[line width=\lw, >={Stealth[inset=3pt, angle=60:13pt, bend]}]
-  \def \radius {1cm}
   \def \margin {22} % margin in angles, depends on the radius
+
+
+  \coordinate (X) at (0,0) {};
+  \path[fill=white] (X) circle[radius=14mm];
+  \ifx\NoTextMode\undefined
+    \ifx\ReducedMode\undefined
+      \draw[draw opacity=0,fill=white] (0,-14mm) rectangle (55mm,14mm);
+    \else
+      \draw[draw opacity=0,fill=white] (0,-14mm) rectangle (21mm,14mm);
+    \fi
+  \else
+    % nothing
+  \fi
+
   \input{../gaplogo-pic.tex}
 \end{tikzpicture}
 
