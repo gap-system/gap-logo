@@ -31,7 +31,7 @@ clean:
 	lualatex $(TEXOPTS) --jobname=gaplogo-reduced --output-dir=$(*D) "\def\ReducedMode{}\input{$<}"
 
 %.png: %.pdf
-	pdftocairo -png -singlefile -r 300 $< $(basename $@ .png)
+	pdftocairo -png -transp -singlefile -r 300 $< $(basename $@ .png)
 
 %.svg: %.pdf
 	pdftocairo -svg $< $@
