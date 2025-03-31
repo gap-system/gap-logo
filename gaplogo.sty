@@ -1,0 +1,71 @@
+% !TEX TS-program = lualatex
+\usepackage{iftex}
+
+\ifluatex
+  % instruct lualatex to generated a reproducible PDF, so e.g. no
+  % dates in it, to ensure re-running TeX produces an identical PDF
+  \pdfvariable suppressoptionalinfo \numexpr32+64+512\relax
+\fi
+
+\usepackage[svgnames]{xcolor}
+
+\usepackage{fontspec}
+  \setmainfont{Ubuntu}
+%  \setmainfont{NationalPark}
+%  \setmainfont{HubotSans}[Weight=600]
+%  \setmainfont{Orbitron}
+%  \setmainfont{Jost}
+%  \setmainfont{Orbitron}
+
+\usepackage{tikz}
+  \usetikzlibrary{positioning}
+  \usetikzlibrary{bending}
+  \usetikzlibrary{shadows}
+  \usetikzlibrary{arrows.meta}
+
+% colors for letter G, A, P in "GAP"
+\definecolor{Gcolor}{named}{Crimson}
+\definecolor{Acolor}{named}{Crimson}
+\definecolor{Pcolor}{named}{Crimson}
+\ifx\DarkMode\undefined
+  \definecolor{Tcolor}{named}{Black}
+\else
+  \definecolor{Tcolor}{named}{WhiteSmoke}
+\fi
+
+% style for the letter G, A, P
+\newcommand\gapstyle[1]{\textbf{\Huge#1}}
+
+% style for the remaining letters
+\ifx\ReducedMode\undefined
+  \newcommand\extrastyle[1]{{\LARGE{}\textcolor{Tcolor}{#1}}}
+\else
+  \newcommand\extrastyle[1]{}
+\fi
+
+% styles for the logo
+
+% base style for all four nodes
+\tikzset{dynkinnode/.style={draw=Tcolor}}
+
+% concrete styles for the four nodes
+\tikzset{dynkinnodeZ/.style={dynkinnode}}
+\tikzset{dynkinnodeA/.style={dynkinnode}}
+\tikzset{dynkinnodeB/.style={dynkinnode}}
+\tikzset{dynkinnodeC/.style={dynkinnode}}
+
+% base style for all edges
+\tikzset{dynkinedge/.style={draw=Tcolor}}
+
+% concrete style for the three edges
+\tikzset{dynkinedgeA/.style={dynkinedge}}
+\tikzset{dynkinedgeB/.style={dynkinedge}}
+\tikzset{dynkinedgeC/.style={dynkinedge}}
+
+% base style for all arrows
+\tikzset{dynkinarrow/.style={draw=Tcolor}}
+
+% concrete style for the three edges
+\tikzset{dynkinarrowAB/.style={dynkinarrow}}
+\tikzset{dynkinarrowBC/.style={dynkinarrow}}
+\tikzset{dynkinarrowCA/.style={dynkinarrow}}

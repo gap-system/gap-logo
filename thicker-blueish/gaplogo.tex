@@ -1,0 +1,34 @@
+% !TEX TS-program = lualatex
+\documentclass[class=article,border=0pt]{standalone}
+
+\usepackage{../gaplogo}
+
+% colors for letter G, A, P in "GAP"
+\definecolor{Gcolor}{named}{DeepSkyBlue}
+\definecolor{Acolor}{named}{CornflowerBlue}
+\definecolor{Pcolor}{named}{SkyBlue}
+
+% base color for the logo, and the three circle arrows
+\tikzset{dynkinedge/.style={draw=NavyBlue}}
+\tikzset{dynkinnode/.append style={draw=NavyBlue}}
+
+\tikzset{dynkinarrowAB/.style={DeepSkyBlue}}
+\tikzset{dynkinarrowCA/.style={CornflowerBlue}}
+\tikzset{dynkinarrowBC/.style={SkyBlue}}
+
+% line thickness
+\ifx\SmallIconMode\undefined
+  \def \lw {4.0pt}
+\else
+  % thicker lines for tiny rendering sizes
+  \def \lw {4.5pt}
+\fi
+
+\begin{document}
+
+\begin{tikzpicture}[line width=\lw, >={Stealth[inset=2pt, angle=75:13pt, bend]}]
+  \def \margin {22} % margin in angles, depends on the radius
+  \input{../gaplogo-pic.tex}
+\end{tikzpicture}
+
+\end{document}
