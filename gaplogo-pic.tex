@@ -19,29 +19,6 @@
   \coordinate (CA2) at (310:\radius*1.2) {};
 
 
-\ifx\DarkMode\undefined
-\else
-  %
-  % draw everything but slightly larger to get a white "outline"
-  %
-  
-  % draw the nodes
-  \path[draw=WhiteSmoke,fill=WhiteSmoke] (Z) circle[radius=\noderadius+\outline];
-  \path[draw=WhiteSmoke,fill=WhiteSmoke] (A) circle[radius=\noderadius+\outline];
-  \path[draw=WhiteSmoke,fill=WhiteSmoke] (B) circle[radius=\noderadius+\outline];
-  \path[draw=WhiteSmoke,fill=WhiteSmoke] (C) circle[radius=\noderadius+\outline];
-
-  % draw the edges connecting the four circles / nodes
-  \draw[shorten >= 2mm, shorten <=2mm, dynkinedgeA,line width=\lw+2*\outline,draw=WhiteSmoke] (Z) -- (A);
-  \draw[shorten >= 2mm, shorten <=2mm, dynkinedgeB,line width=\lw+2*\outline,draw=WhiteSmoke] (Z) -- (B);
-  \draw[shorten >= 2mm, shorten <=2mm, dynkinedgeC,line width=\lw+2*\outline,draw=WhiteSmoke] (Z) -- (C);
-
-  \draw [<->, shorten >=4mm-\outline*2, shorten <=4mm-\outline*2, arrowshadow] (A) .. controls (AB1) and (AB2) .. (B);
-  \draw [<->, shorten >=4mm-\outline*2, shorten <=4mm-\outline*2, arrowshadow] (B) .. controls (BC1) and (BC2) .. (C);
-  \draw [<->, shorten >=4mm-\outline*2, shorten <=4mm-\outline*2, arrowshadow] (C) .. controls (CA1) and (CA2) .. (A);
-\fi
-
-
   % draw the nodes
   \path[dynkinnodeZ] (Z) circle[radius=\noderadius];
   \path[dynkinnodeA] (A) circle[radius=\noderadius];

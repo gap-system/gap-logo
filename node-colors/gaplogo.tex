@@ -9,7 +9,7 @@
 \tikzset{dynkinnodeZ/.append style={fill=Crimson}}
 \tikzset{dynkinnodeA/.append style={fill=ForestGreen}}
 \tikzset{dynkinnodeB/.append style={fill=DodgerBlue}}
-\tikzset{dynkinnodeC/.append style={fill=Gold}}
+\tikzset{dynkinnodeC/.append style={fill=Orange}}
 
 %\tikzset{dynkinarrow/.style={dashed, line width=2.5pt, Straight Barb-Straight Barb}}
 %\tikzset{dynkinarrow/.style={line width=2.5pt, Triangle-Triangle}}
@@ -30,19 +30,20 @@
 \begin{tikzpicture}[line width=\lw, >={Stealth[inset=3pt, angle=60:13pt, bend, round]}]
   \def \margin {22} % margin in angles, depends on the radius
 
-
-  \coordinate (X) at (0,0) {};
-%  \path[fill=white] (X) circle[radius=13.1mm];
-  \path[fill=white] (X) circle[radius=14mm];
-  \ifx\NoTextMode\undefined
-    \ifx\ReducedMode\undefined
-      \draw[draw opacity=0,fill=white] (0,-14mm) rectangle (55mm,14mm);
-    \else
-      \draw[draw opacity=0,fill=white] (0,-14mm) rectangle (21mm,14mm);
-    \fi
-  \else
-    % nothing
-  \fi
+  % 'protected area' behind the logo
+%
+%  \coordinate (X) at (0,0) {};
+%%  \path[fill=white] (X) circle[radius=13.1mm];
+%  \path[fill=white] (X) circle[radius=14mm];
+%  \ifx\NoTextMode\undefined
+%    \ifx\ReducedMode\undefined
+%      \draw[draw opacity=0,fill=white] (0,-14mm) rectangle (55mm,14mm);
+%    \else
+%      \draw[draw opacity=0,fill=white] (0,-14mm) rectangle (21mm,14mm);
+%    \fi
+%  \else
+%    % nothing
+%  \fi
 
   \input{../gaplogo-pic.tex}
 \end{tikzpicture}
