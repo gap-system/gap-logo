@@ -14,7 +14,8 @@
 %\tikzset{dynkinarrow/.style={dashed, line width=2.5pt, Straight Barb-Straight Barb}}
 %\tikzset{dynkinarrow/.style={line width=2.5pt, Triangle-Triangle}}
 %\tikzset{dynkinarrow/.style={line width=2.5pt, {Straight Barb}-{Straight Barb}}}
-%\tikzset{dynkinarrow/.style={line width=3.7pt}}
+%\tikzset{dynkinarrow/.style={line cap=round, dash pattern=on 0pt off 5pt,line width=3.0pt}}
+%\tikzset{dynkinarrow/.style={line width=3.0pt}}
 
 % line thickness
 \ifx\SmallIconMode\undefined
@@ -26,11 +27,12 @@
 
 \begin{document}
 
-\begin{tikzpicture}[line width=\lw, >={Stealth[inset=3pt, angle=60:13pt, bend]}]
+\begin{tikzpicture}[line width=\lw, >={Stealth[inset=3pt, angle=60:13pt, bend, round]}]
   \def \margin {22} % margin in angles, depends on the radius
 
 
   \coordinate (X) at (0,0) {};
+%  \path[fill=white] (X) circle[radius=13.1mm];
   \path[fill=white] (X) circle[radius=14mm];
   \ifx\NoTextMode\undefined
     \ifx\ReducedMode\undefined

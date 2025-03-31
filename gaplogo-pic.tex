@@ -1,6 +1,6 @@
 \def\radius {10mm}
 \def\noderadius {2.2mm}
-\def\outline {1pt}
+\def\outline {3pt}
 \def\arrowinset{4mm}
 
 \tikzset{arrowshadow/.style={WhiteSmoke, line width=\lw+2*\outline, >={Stealth[inset=3pt, angle=60:17pt, bend]}}}
@@ -56,19 +56,31 @@
   % draw the three double-ended arrows which indicate swapping of the circles
 
   % Variant 1: circle arcs
-%  \draw[<->, dynkinarrowAB] ({0+\margin}:\radius)
-%    arc ({0+\margin}:{120-\margin}:\radius);
+%\draw[<->, dynkinarrowAB] ({0+\margin}:\radius)
+%  arc ({0+\margin}:{120-\margin}:\radius);
 %
-%  \draw[<->, dynkinarrowBC] ({120+\margin}:\radius)
-%    arc ({120+\margin}:{240-\margin}:\radius);
+%\draw[<->, dynkinarrowBC] ({120+\margin}:\radius)
+%  arc ({120+\margin}:{240-\margin}:\radius);
 %
-%  \draw[<->, dynkinarrowCA] ({240+\margin}:\radius)
-%    arc ({240+\margin}:{360-\margin}:\radius);
+%\draw[<->, dynkinarrowCA] ({240+\margin}:\radius)
+%  arc ({240+\margin}:{360-\margin}:\radius);
 
   % Variant 2: using Bézier curves
-  \draw [<->, shorten >=4mm, shorten <=4mm, dynkinarrowAB] (A) .. controls (AB1) and (AB2) .. (B);
-  \draw [<->, shorten >=4mm, shorten <=4mm, dynkinarrowBC] (B) .. controls (BC1) and (BC2) .. (C);
-  \draw [<->, shorten >=4mm, shorten <=4mm, dynkinarrowCA] (C) .. controls (CA1) and (CA2) .. (A);
+%  \draw [<->, shorten >=4mm, shorten <=4mm, dynkinarrowAB] (A) .. controls (AB1) and (AB2) .. (B);
+%  \draw [<->, shorten >=4mm, shorten <=4mm, dynkinarrowBC] (B) .. controls (BC1) and (BC2) .. (C);
+%  \draw [<->, shorten >=4mm, shorten <=4mm, dynkinarrowCA] (C) .. controls (CA1) and (CA2) .. (A);
+
+  % Variant 3: circle arcs with reduced radius
+\def\radiusB {9mm}
+\draw[<->, dynkinarrowAB] ({0+\margin}:\radiusB)
+  arc ({0+\margin}:{120-\margin}:\radiusB);
+
+\draw[<->, dynkinarrowBC] ({120+\margin}:\radiusB)
+  arc ({120+\margin}:{240-\margin}:\radiusB);
+
+\draw[<->, dynkinarrowCA] ({240+\margin}:\radiusB)
+  arc ({240+\margin}:{360-\margin}:\radiusB);
+
 
 \ifx\NoTextMode\undefined
     % draw the GAP text
