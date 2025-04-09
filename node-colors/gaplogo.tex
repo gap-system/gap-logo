@@ -1,7 +1,7 @@
 % !TEX TS-program = lualatex
 \documentclass[class=article,border=0pt]{standalone}
 
-%\def\DarkMode{}
+%%\def\DarkMode{}
 
 \usepackage{../gaplogo}
 
@@ -9,7 +9,7 @@
 \tikzset{dynkinnodeZ/.append style={fill=Crimson}}
 \tikzset{dynkinnodeA/.append style={fill=ForestGreen}}
 \tikzset{dynkinnodeB/.append style={fill=DodgerBlue}}
-\tikzset{dynkinnodeC/.append style={fill=Orange}}
+\tikzset{dynkinnodeC/.append style={fill=Gold}}
 
 %\tikzset{dynkinarrow/.style={dashed, line width=2.5pt, Straight Barb-Straight Barb}}
 %\tikzset{dynkinarrow/.style={line width=2.5pt, Triangle-Triangle}}
@@ -19,15 +19,21 @@
 
 % line thickness
 \ifx\SmallIconMode\undefined
-  \def \lw {3.7pt}
+  \def\noderadius {2.4mm}
+  \tikzset{dynkinnode/.append style={line width=3pt}}
+  \tikzset{dynkinedge/.append style={line width=4pt}}
+  \tikzset{dynkinarrow/.style={line width=3pt, >={Stealth[inset=3pt, angle=60:13pt, bend, round]}}}
 \else
   % thicker lines for tiny rendering sizes
-  \def \lw {4.5pt}
+  \def\noderadius {2.7mm}
+  \tikzset{dynkinnode/.append style={line width=3pt}}
+  \tikzset{dynkinedge/.append style={line width=4.5pt}}
+  \tikzset{dynkinarrow/.style={line width=4pt, >={Stealth[inset=3pt, angle=70:16pt, bend, round]}}}
 \fi
 
 \begin{document}
 
-\begin{tikzpicture}[line width=\lw, >={Stealth[inset=3pt, angle=60:13pt, bend, round]}]
+\begin{tikzpicture}
   \def \margin {22} % margin in angles, depends on the radius
 
   % 'protected area' behind the logo
