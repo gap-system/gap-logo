@@ -1,15 +1,16 @@
 % !TEX TS-program = lualatex
 \documentclass[class=article,border=0pt]{standalone}
 
-%%\def\DarkMode{}
-
-\usepackage{../gaplogo}
+\usepackage{gaplogo}
 
 % styles for the logo
-\tikzset{dynkinnodeZ/.append style={fill=Crimson}}
-\tikzset{dynkinnodeA/.append style={fill=ForestGreen}}
-\tikzset{dynkinnodeB/.append style={fill=DodgerBlue}}
-\tikzset{dynkinnodeC/.append style={fill=Gold}}
+\ifx\Theme\BWTheme
+\else
+  \tikzset{dynkinnodeZ/.append style={fill=Crimson}}
+  \tikzset{dynkinnodeA/.append style={fill=ForestGreen}}
+  \tikzset{dynkinnodeB/.append style={fill=DodgerBlue}}
+  \tikzset{dynkinnodeC/.append style={fill=Gold}}
+\fi
 
 %\tikzset{dynkinarrow/.style={dashed, line width=2.5pt, Straight Barb-Straight Barb}}
 %\tikzset{dynkinarrow/.style={line width=2.5pt, Triangle-Triangle}}
@@ -51,7 +52,7 @@
 %    % nothing
 %  \fi
 
-  \input{../gaplogo-pic.tex}
+  \input{gaplogo-pic.tex}
 \end{tikzpicture}
 
 \end{document}

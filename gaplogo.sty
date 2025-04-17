@@ -23,14 +23,25 @@
   \usetikzlibrary{shadows}
   \usetikzlibrary{arrows.meta}
 
+
+\def\DarkTheme{dark}
+\def\LightTheme{light}
+\def\BWTheme{bw}
+
 % colors for letter G, A, P in "GAP"
-\definecolor{Gcolor}{named}{Crimson}
-\definecolor{Acolor}{named}{Crimson}
-\definecolor{Pcolor}{named}{Crimson}
-\ifx\DarkMode\undefined
-  \definecolor{Tcolor}{named}{Black}
+\ifx\Theme\BWTheme
+  \definecolor{Gcolor}{named}{Black}
+  \definecolor{Acolor}{named}{Black}
+  \definecolor{Pcolor}{named}{Black}
 \else
+  \definecolor{Gcolor}{named}{Crimson}
+  \definecolor{Acolor}{named}{Crimson}
+  \definecolor{Pcolor}{named}{Crimson}
+\fi
+\ifx\Theme\LightTheme
   \definecolor{Tcolor}{named}{WhiteSmoke}
+\else
+  \definecolor{Tcolor}{named}{Black}
 \fi
 
 % style for the letter G, A, P
