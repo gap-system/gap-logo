@@ -6,15 +6,22 @@
 % styles for the logo
 \ifx\Theme\BWTheme
 \else
-  \tikzset{dynkinnodeZ/.append style={fill=Crimson}}
-  \ifx\Theme\FourColorTheme
+  \ifx\Theme\GrayTheme
+    %\tikzset{dynkinnodeZ/.append style={fill=Black}}
     \tikzset{dynkinnodeA/.append style={fill=Gray}}
     \tikzset{dynkinnodeB/.append style={fill=DarkGray}}
     \tikzset{dynkinnodeC/.append style={fill=LightGray}}
   \else
-    \tikzset{dynkinnodeA/.append style={fill=ForestGreen}}
-    \tikzset{dynkinnodeB/.append style={fill=DodgerBlue}}
-    \tikzset{dynkinnodeC/.append style={fill=Gold}}
+    \tikzset{dynkinnodeZ/.append style={fill=Crimson}}
+    \ifx\Theme\FourColorTheme
+      \tikzset{dynkinnodeA/.append style={fill=Gray}}
+      \tikzset{dynkinnodeB/.append style={fill=DarkGray}}
+      \tikzset{dynkinnodeC/.append style={fill=LightGray}}
+    \else
+      \tikzset{dynkinnodeA/.append style={fill=ForestGreen}}
+      \tikzset{dynkinnodeB/.append style={fill=DodgerBlue}}
+      \tikzset{dynkinnodeC/.append style={fill=Gold}}
+    \fi
   \fi
 \fi
 

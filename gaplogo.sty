@@ -28,21 +28,26 @@
 \def\LightTheme{light}
 \def\BWTheme{bw}
 \def\FourColorTheme{4c}
+\def\GrayTheme{gray}
 
 % colors for letter G, A, P in "GAP"
+\definecolor{Gcolor}{named}{Crimson}
+\definecolor{Acolor}{named}{Crimson}
+\definecolor{Pcolor}{named}{Crimson}
 \ifx\Theme\BWTheme
   \definecolor{Gcolor}{named}{Black}
   \definecolor{Acolor}{named}{Black}
   \definecolor{Pcolor}{named}{Black}
-\else
-  \definecolor{Gcolor}{named}{Crimson}
-  \definecolor{Acolor}{named}{Crimson}
-  \definecolor{Pcolor}{named}{Crimson}
 \fi
+\ifx\Theme\GrayTheme
+  \definecolor{Gcolor}{named}{Black}
+  \definecolor{Acolor}{named}{Black}
+  \definecolor{Pcolor}{named}{Black}
+\fi
+
+\definecolor{Tcolor}{named}{Black}
 \ifx\Theme\DarkTheme
   \definecolor{Tcolor}{named}{WhiteSmoke}
-\else
-  \definecolor{Tcolor}{named}{Black}
 \fi
 
 % style for the letter G, A, P
