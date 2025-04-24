@@ -4,7 +4,8 @@
 # - svg2png
 TEXOPTS := --synctex=1 -shell-escape --file-line-error --halt-on-error
 
-VARIANTS = classic thicker thicker-red thicker-blueish thicker-greenish thicker-orchid node-colors
+VARIANTS = node-colors
+#VARIANTS = classic thicker thicker-red thicker-blueish thicker-greenish thicker-orchid node-colors
 
 THEMES = light dark bw  # bw = black&white
 
