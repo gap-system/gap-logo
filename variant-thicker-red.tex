@@ -3,10 +3,13 @@
 
 \usepackage{gaplogo}
 
-% base color for the logo, and the three circle arrows
-\tikzset{dynkinarrowAB/.style={Crimson}}
-\tikzset{dynkinarrowCA/.style={DarkOrange}}
-\tikzset{dynkinarrowBC/.style={Goldenrod}}
+\ifx\Theme\BWTheme
+\else
+  % base color for the logo, and the three circle arrows
+  \tikzset{dynkinarrowAB/.style={Crimson}}
+  \tikzset{dynkinarrowCA/.style={DarkOrange}}
+  \tikzset{dynkinarrowBC/.style={Goldenrod}}
+\fi
 
 % line thickness
 \ifx\SmallIconMode\undefined

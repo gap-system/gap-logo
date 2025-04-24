@@ -3,18 +3,21 @@
 
 \usepackage{gaplogo}
 
-% colors for letter G, A, P in "GAP"
-\definecolor{Gcolor}{named}{DarkSeaGreen}
-\definecolor{Acolor}{named}{CadetBlue}
-\definecolor{Pcolor}{named}{DarkCyan}
-
-% base color for the logo, and the three circle arrows
-\tikzset{dynkinedge/.style={draw=DarkSlateGrey}}
-\tikzset{dynkinnode/.append style={draw=DarkSlateGrey}}
-
-\tikzset{dynkinarrowAB/.style={DarkSeaGreen}}
-\tikzset{dynkinarrowCA/.style={CadetBlue}}
-\tikzset{dynkinarrowBC/.style={DarkCyan}}
+\ifx\Theme\BWTheme
+\else
+  % colors for letter G, A, P in "GAP"
+  \definecolor{Gcolor}{named}{DarkSeaGreen}
+  \definecolor{Acolor}{named}{CadetBlue}
+  \definecolor{Pcolor}{named}{DarkCyan}
+  
+  % base color for the logo, and the three circle arrows
+  \tikzset{dynkinedge/.style={draw=DarkSlateGrey}}
+  \tikzset{dynkinnode/.append style={draw=DarkSlateGrey}}
+  
+  \tikzset{dynkinarrowAB/.style={DarkSeaGreen}}
+  \tikzset{dynkinarrowCA/.style={CadetBlue}}
+  \tikzset{dynkinarrowBC/.style={DarkCyan}}
+\fi
 
 % line thickness
 \ifx\SmallIconMode\undefined
