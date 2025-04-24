@@ -110,7 +110,7 @@ output/%/4c/gaplogo-reduced.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
 
 
 %.png: %.pdf
-	pdftocairo -png -transp -singlefile -r 600 $< $(basename $@ .png)
+	pdftocairo -png -transp -singlefile -r 1200 $< $(basename $@ .png)
 
 %.svg: %.pdf
 	pdftocairo -svg $< $@
