@@ -7,9 +7,15 @@
 \ifx\Theme\BWTheme
 \else
   \tikzset{dynkinnodeZ/.append style={fill=Crimson}}
-  \tikzset{dynkinnodeA/.append style={fill=ForestGreen}}
-  \tikzset{dynkinnodeB/.append style={fill=DodgerBlue}}
-  \tikzset{dynkinnodeC/.append style={fill=Gold}}
+  \ifx\Theme\FourColorTheme
+    \tikzset{dynkinnodeA/.append style={fill=Gray}}
+    \tikzset{dynkinnodeB/.append style={fill=DarkGray}}
+    \tikzset{dynkinnodeC/.append style={fill=LightGray}}
+  \else
+    \tikzset{dynkinnodeA/.append style={fill=ForestGreen}}
+    \tikzset{dynkinnodeB/.append style={fill=DodgerBlue}}
+    \tikzset{dynkinnodeC/.append style={fill=Gold}}
+  \fi
 \fi
 
 %\tikzset{dynkinarrow/.style={dashed, line width=2.5pt, Straight Barb-Straight Barb}}
