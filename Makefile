@@ -4,10 +4,10 @@
 # - svg2png
 TEXOPTS := --synctex=1 -shell-escape --file-line-error --halt-on-error
 
-VARIANTS = node-colors
-#VARIANTS = classic thicker thicker-red thicker-blueish thicker-greenish thicker-orchid node-colors
+DESIGNS = node-colors
+#DESIGNS = classic thicker thicker-red thicker-blueish thicker-greenish thicker-orchid node-colors
 
-THEMES = light dark bw 4c  # bw = black&white;  4c = four colors
+THEMES := light dark bw 4c  # bw = black&white;  4c = four colors
 
 FILE = gaplogo.pdf gaplogo.svg gaplogo.png \
  gaplogo-notext.pdf gaplogo-notext.svg gaplogo-notext.png \
@@ -15,7 +15,7 @@ FILE = gaplogo.pdf gaplogo.svg gaplogo.png \
  gaplogo-reduced.pdf gaplogo-reduced.svg gaplogo-reduced.png \
  gaplogo-notext32.png gaplogo-notext48.png gaplogo-notext64.png gaplogo-notext128.png gaplogo-notext256.png
 
-DST := $(foreach V,$(VARIANTS),$(foreach T,$(THEMES),$(foreach F,$(FILE),output/$(V)/$(T)/$(F))))
+DST := $(foreach D,$(DESIGNS),$(foreach T,$(THEMES),$(foreach F,$(FILE),output/$(D)/$(T)/$(F))))
 
 TEXINPUTS = $(PWD)/:
 export TEXINPUTS
@@ -25,89 +25,25 @@ all: $(DST)
 clean:
 	rm -f $(DST) */*.aux */*.log */*.synctex.gz
 
-output/%/light/gaplogo.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
-	mkdir -p $(@D)/.aux
-	lualatex $(TEXOPTS) --jobname=gaplogo --output-dir=$(@D)/.aux "\def\Theme{light}\input{$<}"
-	mv $(@D)/.aux/gaplogo.pdf $@
+VARIANTS := \
+  gaplogo: \
+  gaplogo-notext:\def\NoTextMode{} \
+  gaplogo-notext-small:\def\NoTextMode{}\def\SmallIconMode{} \
+  gaplogo-reduced:\def\ReducedMode{}
 
-output/%/dark/gaplogo.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
-	mkdir -p $(@D)/.aux
-	lualatex $(TEXOPTS) --jobname=gaplogo --output-dir=$(@D)/.aux "\def\Theme{dark}\input{$<}"
-	mv $(@D)/.aux/gaplogo.pdf $@
+define MAKE_GAPLOGO_RULE
+output/%/$(1)/$(2).pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
+	mkdir -p $$(@D)/.aux
+	lualatex $$(TEXOPTS) --jobname=$(2) --output-dir=$$(@D)/.aux "\def\Theme{$(1)}$(3)\input{$$<}"
+	mv $$(@D)/.aux/$(2).pdf $$@
+endef
 
-output/%/bw/gaplogo.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
-	mkdir -p $(@D)/.aux
-	lualatex $(TEXOPTS) --jobname=gaplogo --output-dir=$(@D)/.aux "\def\Theme{bw}\input{$<}"
-	mv $(@D)/.aux/gaplogo.pdf $@
-
-output/%/4c/gaplogo.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
-	mkdir -p $(@D)/.aux
-	lualatex $(TEXOPTS) --jobname=gaplogo --output-dir=$(@D)/.aux "\def\Theme{4c}\input{$<}"
-	mv $(@D)/.aux/gaplogo.pdf $@
-
-
-output/%/light/gaplogo-notext.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
-	mkdir -p $(@D)/.aux
-	lualatex $(TEXOPTS) --jobname=gaplogo-notext --output-dir=$(@D)/.aux "\def\Theme{light}\def\NoTextMode{}\input{$<}"
-	mv $(@D)/.aux/gaplogo-notext.pdf $@
-
-output/%/dark/gaplogo-notext.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
-	mkdir -p $(@D)/.aux
-	lualatex $(TEXOPTS) --jobname=gaplogo-notext --output-dir=$(@D)/.aux "\def\Theme{dark}\def\NoTextMode{}\input{$<}"
-	mv $(@D)/.aux/gaplogo-notext.pdf $@
-
-output/%/bw/gaplogo-notext.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
-	mkdir -p $(@D)/.aux
-	lualatex $(TEXOPTS) --jobname=gaplogo-notext --output-dir=$(@D)/.aux "\def\Theme{bw}\def\NoTextMode{}\input{$<}"
-	mv $(@D)/.aux/gaplogo-notext.pdf $@
-
-output/%/4c/gaplogo-notext.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
-	mkdir -p $(@D)/.aux
-	lualatex $(TEXOPTS) --jobname=gaplogo-notext --output-dir=$(@D)/.aux "\def\Theme{4c}\def\NoTextMode{}\input{$<}"
-	mv $(@D)/.aux/gaplogo-notext.pdf $@
-
-
-output/%/light/gaplogo-notext-small.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
-	mkdir -p $(@D)/.aux
-	lualatex $(TEXOPTS) --jobname=gaplogo-notext-small --output-dir=$(@D)/.aux "\def\Theme{light}\def\NoTextMode{}\def\SmallIconMode{}\input{$<}"
-	mv $(@D)/.aux/gaplogo-notext-small.pdf $@
-
-output/%/dark/gaplogo-notext-small.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
-	mkdir -p $(@D)/.aux
-	lualatex $(TEXOPTS) --jobname=gaplogo-notext-small --output-dir=$(@D)/.aux "\def\Theme{dark}\def\NoTextMode{}\def\SmallIconMode{}\input{$<}"
-	mv $(@D)/.aux/gaplogo-notext-small.pdf $@
-
-output/%/bw/gaplogo-notext-small.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
-	mkdir -p $(@D)/.aux
-	lualatex $(TEXOPTS) --jobname=gaplogo-notext-small --output-dir=$(@D)/.aux "\def\Theme{bw}\def\NoTextMode{}\def\SmallIconMode{}\input{$<}"
-	mv $(@D)/.aux/gaplogo-notext-small.pdf $@
-
-output/%/4c/gaplogo-notext-small.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
-	mkdir -p $(@D)/.aux
-	lualatex $(TEXOPTS) --jobname=gaplogo-notext-small --output-dir=$(@D)/.aux "\def\Theme{4c}\def\NoTextMode{}\def\SmallIconMode{}\input{$<}"
-	mv $(@D)/.aux/gaplogo-notext-small.pdf $@
-
-
-output/%/light/gaplogo-reduced.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
-	mkdir -p $(@D)/.aux
-	lualatex $(TEXOPTS) --jobname=gaplogo-reduced --output-dir=$(@D)/.aux "\def\Theme{light}\def\ReducedMode{}\input{$<}"
-	mv $(@D)/.aux/gaplogo-reduced.pdf $@
-
-output/%/dark/gaplogo-reduced.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
-	mkdir -p $(@D)/.aux
-	lualatex $(TEXOPTS) --jobname=gaplogo-reduced --output-dir=$(@D)/.aux "\def\Theme{dark}\def\ReducedMode{}\input{$<}"
-	mv $(@D)/.aux/gaplogo-reduced.pdf $@
-
-output/%/bw/gaplogo-reduced.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
-	mkdir -p $(@D)/.aux
-	lualatex $(TEXOPTS) --jobname=gaplogo-reduced --output-dir=$(@D)/.aux "\def\Theme{bw}\def\ReducedMode{}\input{$<}"
-	mv $(@D)/.aux/gaplogo-reduced.pdf $@
-
-output/%/4c/gaplogo-reduced.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
-	mkdir -p $(@D)/.aux
-	lualatex $(TEXOPTS) --jobname=gaplogo-reduced --output-dir=$(@D)/.aux "\def\Theme{4c}\def\ReducedMode{}\input{$<}"
-	mv $(@D)/.aux/gaplogo-reduced.pdf $@
-
+# Generate rules for every combination of theme and variant
+$(foreach theme,$(THEMES),\
+  $(foreach v,$(VARIANTS),\
+    $(eval $(call MAKE_GAPLOGO_RULE,$(theme),$(word 1,$(subst :, ,$(v))),$(wordlist 2,99,$(subst :, ,$(v)))))\
+  )\
+)
 
 %.png: %.pdf
 	pdftocairo -png -transp -singlefile -r 1200 $< $(basename $@ .png)
