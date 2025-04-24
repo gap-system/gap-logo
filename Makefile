@@ -10,10 +10,11 @@ THEMES = light dark bw  # bw = black&white
 
 FILE = gaplogo.pdf gaplogo.svg gaplogo.png \
  gaplogo-notext.pdf gaplogo-notext.svg gaplogo-notext.png \
+ gaplogo-notext-small.pdf gaplogo-notext-small.svg gaplogo-notext-small.png \
  gaplogo-reduced.pdf gaplogo-reduced.svg gaplogo-reduced.png \
  gaplogo-notext32.png gaplogo-notext48.png gaplogo-notext64.png gaplogo-notext128.png gaplogo-notext256.png
 
-DST := $(foreach V,$(VARIANTS),$(foreach T,$(THEMES),$(foreach F,$(FILE),output/$(V)/$(T)/$(F)))))
+DST := $(foreach V,$(VARIANTS),$(foreach T,$(THEMES),$(foreach F,$(FILE),output/$(V)/$(T)/$(F))))
 
 TEXINPUTS = $(PWD)/:
 export TEXINPUTS
@@ -24,28 +25,67 @@ clean:
 	rm -f $(DST) */*.aux */*.log */*.synctex.gz
 
 output/%/light/gaplogo.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
-	mkdir -p $(@D)
-	lualatex $(TEXOPTS) --jobname=gaplogo --output-dir=$(@D) "\def\Theme{light}\input{$<}"
+	mkdir -p $(@D)/.aux
+	lualatex $(TEXOPTS) --jobname=gaplogo --output-dir=$(@D)/.aux "\def\Theme{light}\input{$<}"
+	mv $(@D)/.aux/gaplogo.pdf $@
 
 output/%/dark/gaplogo.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
-	mkdir -p $(@D)
-	lualatex $(TEXOPTS) --jobname=gaplogo --output-dir=$(@D) "\def\Theme{dark}\input{$<}"
+	mkdir -p $(@D)/.aux
+	lualatex $(TEXOPTS) --jobname=gaplogo --output-dir=$(@D)/.aux "\def\Theme{dark}\input{$<}"
+	mv $(@D)/.aux/gaplogo.pdf $@
 
 output/%/bw/gaplogo.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
-	mkdir -p $(@D)
-	lualatex $(TEXOPTS) --jobname=gaplogo --output-dir=$(@D) "\def\Theme{bw}\input{$<}"
+	mkdir -p $(@D)/.aux
+	lualatex $(TEXOPTS) --jobname=gaplogo --output-dir=$(@D)/.aux "\def\Theme{bw}\input{$<}"
+	mv $(@D)/.aux/gaplogo.pdf $@
 
 
-%-notext.pdf: %.tex gaplogo.sty gaplogo-pic.tex
-	lualatex $(TEXOPTS) --jobname=gaplogo-notext --output-dir=$(@D) "\def\NoTextMode{}\input{$<}"
+output/%/light/gaplogo-notext.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
+	mkdir -p $(@D)/.aux
+	lualatex $(TEXOPTS) --jobname=gaplogo-notext --output-dir=$(@D)/.aux "\def\Theme{light}\def\NoTextMode{}\input{$<}"
+	mv $(@D)/.aux/gaplogo-notext.pdf $@
 
-%-notext-small.pdf: %.tex gaplogo.sty gaplogo-pic.tex
-	lualatex $(TEXOPTS) --jobname=gaplogo-notext-small --output-dir=$(@D) "\def\NoTextMode{}\def\SmallIconMode{}\input{$<}"
+output/%/dark/gaplogo-notext.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
+	mkdir -p $(@D)/.aux
+	lualatex $(TEXOPTS) --jobname=gaplogo-notext --output-dir=$(@D)/.aux "\def\Theme{dark}\def\NoTextMode{}\input{$<}"
+	mv $(@D)/.aux/gaplogo-notext.pdf $@
 
-%-reduced.pdf: %.tex gaplogo.sty gaplogo-pic.tex
-	lualatex $(TEXOPTS) --jobname=gaplogo-reduced --output-dir=$(@D) "\def\ReducedMode{}\input{$<}"
+output/%/bw/gaplogo-notext.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
+	mkdir -p $(@D)/.aux
+	lualatex $(TEXOPTS) --jobname=gaplogo-notext --output-dir=$(@D)/.aux "\def\Theme{bw}\def\NoTextMode{}\input{$<}"
+	mv $(@D)/.aux/gaplogo-notext.pdf $@
 
 
+output/%/light/gaplogo-notext-small.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
+	mkdir -p $(@D)/.aux
+	lualatex $(TEXOPTS) --jobname=gaplogo-notext-small --output-dir=$(@D)/.aux "\def\Theme{light}\def\NoTextMode{}\def\SmallIconMode{}\input{$<}"
+	mv $(@D)/.aux/gaplogo-notext-small.pdf $@
+
+output/%/dark/gaplogo-notext-small.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
+	mkdir -p $(@D)/.aux
+	lualatex $(TEXOPTS) --jobname=gaplogo-notext-small --output-dir=$(@D)/.aux "\def\Theme{dark}\def\NoTextMode{}\def\SmallIconMode{}\input{$<}"
+	mv $(@D)/.aux/gaplogo-notext-small.pdf $@
+
+output/%/bw/gaplogo-notext-small.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
+	mkdir -p $(@D)/.aux
+	lualatex $(TEXOPTS) --jobname=gaplogo-notext-small --output-dir=$(@D)/.aux "\def\Theme{bw}\def\NoTextMode{}\def\SmallIconMode{}\input{$<}"
+	mv $(@D)/.aux/gaplogo-notext-small.pdf $@
+
+
+output/%/light/gaplogo-reduced.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
+	mkdir -p $(@D)/.aux
+	lualatex $(TEXOPTS) --jobname=gaplogo-reduced --output-dir=$(@D)/.aux "\def\Theme{light}\def\ReducedMode{}\input{$<}"
+	mv $(@D)/.aux/gaplogo-reduced.pdf $@
+
+output/%/dark/gaplogo-reduced.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
+	mkdir -p $(@D)/.aux
+	lualatex $(TEXOPTS) --jobname=gaplogo-reduced --output-dir=$(@D)/.aux "\def\Theme{dark}\def\ReducedMode{}\input{$<}"
+	mv $(@D)/.aux/gaplogo-reduced.pdf $@
+
+output/%/bw/gaplogo-reduced.pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
+	mkdir -p $(@D)/.aux
+	lualatex $(TEXOPTS) --jobname=gaplogo-reduced --output-dir=$(@D)/.aux "\def\Theme{bw}\def\ReducedMode{}\input{$<}"
+	mv $(@D)/.aux/gaplogo-reduced.pdf $@
 
 
 %.png: %.pdf
