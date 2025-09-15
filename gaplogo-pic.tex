@@ -4,11 +4,6 @@
   \coordinate (C) at (240:\radius) {};
   \coordinate (Z) at (0,0) {};
 
-  % Coordinates for helping draw bounding box
-  \coordinate (INVISIBLEAN) at ( 90:\radius) {};
-  \coordinate (INVISIBLEAE) at (180:\radius) {};
-  \coordinate (INVISIBLEAS) at (270:\radius) {};
-
   \coordinate (AB1) at ( 50:\radius*1.2) {};
   \coordinate (AB2) at ( 70:\radius*1.2) {};
   \coordinate (BC1) at (170:\radius*1.2) {};
@@ -28,10 +23,6 @@
   \path[dynkinnodeB] (B) circle[radius=\noderadius];
   \path[dynkinnodeC] (C) circle[radius=\noderadius];
 
-  % Invisible nodes for bounding box
-  \path[dynkinnodeA, draw=none, fill=none] (INVISIBLEAS) circle[radius=\noderadius];
-  \path[dynkinnodeA, draw=none, fill=none] (INVISIBLEAN) circle[radius=\noderadius];
-  \path[dynkinnodeA, draw=none, fill=none] (INVISIBLEAE) circle[radius=\noderadius];
 
   % draw the three double-ended arrows which indicate swapping of the circles
   % for this we use circle arcs but with slightly reduced radius
@@ -43,6 +34,16 @@
 
 \draw[<->, dynkinarrowCA] ({240+\margin}:\radiusB)
   arc ({240+\margin}:{360-\margin}:\radiusB);
+
+
+  % Invisible circle to make bounding box centered on (0, 0)
+  \draw[draw=none, fill=none] let
+    \p1 = ($(current bounding box.east)$), \n1 = {veclen(\x1,\y1)},
+    \p2 = ($(current bounding box.west)$), \n2 = {veclen(\x2,\y2)},
+    \p3 = ($(current bounding box.south)$), \n3 = {veclen(\x3,\y3)},
+    \p4 = ($(current bounding box.north)$), \n4 = {veclen(\x4,\y4)},
+    \n5={max(\n1, \n2, \n3, \n4)}
+    in (0, 0) circle (\n5);
 
 
 \ifx\NoTextMode\undefined
