@@ -4,6 +4,11 @@
   \coordinate (C) at (240:\radius) {};
   \coordinate (Z) at (0,0) {};
 
+  % Coordinates for helping draw bounding box
+  \coordinate (INVISIBLEAN) at ( 90:\radius) {};
+  \coordinate (INVISIBLEAE) at (180:\radius) {};
+  \coordinate (INVISIBLEAS) at (270:\radius) {};
+
   \coordinate (AB1) at ( 50:\radius*1.2) {};
   \coordinate (AB2) at ( 70:\radius*1.2) {};
   \coordinate (BC1) at (170:\radius*1.2) {};
@@ -22,6 +27,11 @@
   \path[dynkinnodeA] (A) circle[radius=\noderadius];
   \path[dynkinnodeB] (B) circle[radius=\noderadius];
   \path[dynkinnodeC] (C) circle[radius=\noderadius];
+
+  % Invisible nodes for bounding box
+  \path[dynkinnodeA, draw=none, fill=none] (INVISIBLEAS) circle[radius=\noderadius];
+  \path[dynkinnodeA, draw=none, fill=none] (INVISIBLEAN) circle[radius=\noderadius];
+  \path[dynkinnodeA, draw=none, fill=none] (INVISIBLEAE) circle[radius=\noderadius];
 
   % draw the three double-ended arrows which indicate swapping of the circles
   % for this we use circle arcs but with slightly reduced radius
