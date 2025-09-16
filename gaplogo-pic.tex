@@ -1,7 +1,12 @@
   % set coordinates of the four circles, starting at the one on the right
   \coordinate (A) at (    \rotationangle:\radius) {};
+\ifx\mirrored\undefined
   \coordinate (B) at (120+\rotationangle:\radius) {};
   \coordinate (C) at (240+\rotationangle:\radius) {};
+\else
+  \coordinate (B) at (240+\rotationangle:\radius) {};
+  \coordinate (C) at (120+\rotationangle:\radius) {};
+\fi
   \coordinate (Z) at (0,0) {};
 
   % draw the edges connecting the four circles / nodes
