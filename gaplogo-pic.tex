@@ -1,16 +1,8 @@
   % set coordinates of the four circles, starting at the one on the right
-  \coordinate (A) at (  0:\radius) {};
-  \coordinate (B) at (120:\radius) {};
-  \coordinate (C) at (240:\radius) {};
+  \coordinate (A) at (    \rotationangle:\radius) {};
+  \coordinate (B) at (120+\rotationangle:\radius) {};
+  \coordinate (C) at (240+\rotationangle:\radius) {};
   \coordinate (Z) at (0,0) {};
-
-  \coordinate (AB1) at ( 50:\radius*1.2) {};
-  \coordinate (AB2) at ( 70:\radius*1.2) {};
-  \coordinate (BC1) at (170:\radius*1.2) {};
-  \coordinate (BC2) at (190:\radius*1.2) {};
-  \coordinate (CA1) at (290:\radius*1.2) {};
-  \coordinate (CA2) at (310:\radius*1.2) {};
-
 
   % draw the edges connecting the four circles / nodes
   \draw[shorten >= 2mm, shorten <=2mm, dynkinedgeA] (Z) -- (A);
@@ -26,14 +18,14 @@
 
   % draw the three double-ended arrows which indicate swapping of the circles
   % for this we use circle arcs but with slightly reduced radius
-\draw[<->, dynkinarrowAB] ({0+\margin}:\radiusB)
-  arc ({0+\margin}:{120-\margin}:\radiusB);
+\draw[<->, dynkinarrowAB] ({\rotationangle+\margin}:\radiusB)
+  arc ({\rotationangle+\margin}:{120+\rotationangle-\margin}:\radiusB);
 
-\draw[<->, dynkinarrowBC] ({120+\margin}:\radiusB)
-  arc ({120+\margin}:{240-\margin}:\radiusB);
+\draw[<->, dynkinarrowBC] ({120+\rotationangle+\margin}:\radiusB)
+  arc ({120+\rotationangle+\margin}:{240+\rotationangle-\margin}:\radiusB);
 
-\draw[<->, dynkinarrowCA] ({240+\margin}:\radiusB)
-  arc ({240+\margin}:{360-\margin}:\radiusB);
+\draw[<->, dynkinarrowCA] ({240+\rotationangle+\margin}:\radiusB)
+  arc ({240+\rotationangle+\margin}:{360+\rotationangle-\margin}:\radiusB);
 
 
   % Invisible circle to make bounding box centered on (0, 0)
