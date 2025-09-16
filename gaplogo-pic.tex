@@ -23,6 +23,7 @@
   \path[dynkinnodeB] (B) circle[radius=\noderadius];
   \path[dynkinnodeC] (C) circle[radius=\noderadius];
 
+
   % draw the three double-ended arrows which indicate swapping of the circles
   % for this we use circle arcs but with slightly reduced radius
 \draw[<->, dynkinarrowAB] ({0+\margin}:\radiusB)
@@ -33,6 +34,16 @@
 
 \draw[<->, dynkinarrowCA] ({240+\margin}:\radiusB)
   arc ({240+\margin}:{360-\margin}:\radiusB);
+
+
+  % Invisible circle to make bounding box centered on (0, 0)
+  \draw[draw=none, fill=none] let
+    \p1 = ($(current bounding box.east)$), \n1 = {veclen(\x1,\y1)},
+    \p2 = ($(current bounding box.west)$), \n2 = {veclen(\x2,\y2)},
+    \p3 = ($(current bounding box.south)$), \n3 = {veclen(\x3,\y3)},
+    \p4 = ($(current bounding box.north)$), \n4 = {veclen(\x4,\y4)},
+    \n5={max(\n1, \n2, \n3, \n4)}
+    in (0, 0) circle (\n5);
 
 
 \ifx\NoTextMode\undefined
