@@ -5,7 +5,6 @@
 TEXOPTS := --synctex=1 -shell-escape --file-line-error --halt-on-error
 
 DESIGNS = node-colors
-#DESIGNS = classic thicker thicker-red thicker-blueish thicker-greenish thicker-orchid node-colors
 
 THEMES := light dark bw 4c gray # bw = black&white;  4c = four colors
 
