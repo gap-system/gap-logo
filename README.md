@@ -15,9 +15,9 @@ such as PNG.
 
 Logo without text (e.g. for icons):
 
-| 32x32  | 48x48 | 64x64 | 128x128 |
-| ------------- | ------------- | ------------- | ------------- |
-| ![GAP Icon 32x32](output/node-colors/light/gaplogo-notext32.png "32x32") |  ![GAP Icon 48x48](output/node-colors/light/gaplogo-notext48.png "48x48") | ![GAP Icon 64x64](output/node-colors/light/gaplogo-notext64.png "64x64") | ![GAP Icon 128x128](output/node-colors/light/gaplogo-notext128.png "128x128") |
+| 32x32  | 512x512 |
+| ------------- | ------------- |
+| ![GAP Icon 32x32](output/node-colors/light/gaplogo-notext32.png "32x32") | ![GAP Icon 128x128](output/node-colors/light/gaplogo-notext512.png "512x512") |
 
 ### Dark theme variant
 
@@ -27,9 +27,9 @@ Logo without text (e.g. for icons):
 
 Logo without text (e.g. for icons):
 
-| 32x32  | 48x48 | 64x64 | 128x128 |
-| ------------- | ------------- | ------------- | ------------- |
-| ![GAP Icon 32x32](output/node-colors/dark/gaplogo-notext32.png "32x32") |  ![GAP Icon 48x48](output/node-colors/dark/gaplogo-notext48.png "48x48") | ![GAP Icon 64x64](output/node-colors/dark/gaplogo-notext64.png "64x64") | ![GAP Icon 128x128](output/node-colors/dark/gaplogo-notext128.png "128x128") |
+| 32x32  | 512x512 |
+| ------------- | ------------- |
+| ![GAP Icon 32x32](output/node-colors/dark/gaplogo-notext32.png "32x32") | ![GAP Icon 128x128](output/node-colors/dark/gaplogo-notext512.png "512x512") |
 
 ### Four color variant
 
@@ -39,9 +39,9 @@ Logo without text (e.g. for icons):
 
 Logo without text (e.g. for icons):
 
-| 32x32  | 48x48 | 64x64 | 128x128 |
-| ------------- | ------------- | ------------- | ------------- |
-| ![GAP Icon 32x32](output/node-colors/4c/gaplogo-notext32.png "32x32") |  ![GAP Icon 48x48](output/node-colors/4c/gaplogo-notext48.png "48x48") | ![GAP Icon 64x64](output/node-colors/4c/gaplogo-notext64.png "64x64") | ![GAP Icon 128x128](output/node-colors/4c/gaplogo-notext128.png "128x128") |
+| 32x32  | 512x512 |
+| ------------- | ------------- |
+| ![GAP Icon 32x32](output/node-colors/4c/gaplogo-notext32.png "32x32") | ![GAP Icon 128x128](output/node-colors/4c/gaplogo-notext512.png "512x512") |
 
 ### Gray variant
 
@@ -51,9 +51,9 @@ Logo without text (e.g. for icons):
 
 Logo without text (e.g. for icons):
 
-| 32x32  | 48x48 | 64x64 | 128x128 |
-| ------------- | ------------- | ------------- | ------------- |
-| ![GAP Icon 32x32](output/node-colors/gray/gaplogo-notext32.png "32x32") |  ![GAP Icon 48x48](output/node-colors/gray/gaplogo-notext48.png "48x48") | ![GAP Icon 64x64](output/node-colors/gray/gaplogo-notext64.png "64x64") | ![GAP Icon 128x128](output/node-colors/gray/gaplogo-notext128.png "128x128") |
+| 32x32  | 512x512 |
+| ------------- | ------------- |
+| ![GAP Icon 32x32](output/node-colors/gray/gaplogo-notext32.png "32x32") | ![GAP Icon 128x128](output/node-colors/gray/gaplogo-notext512.png "512x512") |
 
 ### Black & white variant
 
@@ -63,9 +63,9 @@ Logo without text (e.g. for icons):
 
 Logo without text (e.g. for icons):
 
-| 32x32  | 48x48 | 64x64 | 128x128 |
-| ------------- | ------------- | ------------- | ------------- |
-| ![GAP Icon 32x32](output/node-colors/bw/gaplogo-notext32.png "32x32") |  ![GAP Icon 48x48](output/node-colors/bw/gaplogo-notext48.png "48x48") | ![GAP Icon 64x64](output/node-colors/bw/gaplogo-notext64.png "64x64") | ![GAP Icon 128x128](output/node-colors/bw/gaplogo-notext128.png "128x128") |
+| 32x32  | 512x512 |
+| ------------- | ------------- |
+| ![GAP Icon 32x32](output/node-colors/bw/gaplogo-notext32.png "32x32") | ![GAP Icon 128x128](output/node-colors/bw/gaplogo-notext512.png "512x512") |
 
 
 ## Rationale
