@@ -12,7 +12,7 @@ FILE = gaplogo.pdf gaplogo.svg gaplogo.png \
  gaplogo-notext.pdf gaplogo-notext.svg gaplogo-notext.png \
  gaplogo-notext-small.pdf gaplogo-notext-small.svg gaplogo-notext-small.png \
  gaplogo-reduced.pdf gaplogo-reduced.svg gaplogo-reduced.png \
- gaplogo-notext32.png gaplogo-notext48.png gaplogo-notext64.png gaplogo-notext128.png gaplogo-notext256.png
+ gaplogo-notext32.png gaplogo-notext512.png
 
 DST := $(foreach D,$(DESIGNS),$(foreach T,$(THEMES),$(foreach F,$(FILE),output/$(D)/$(T)/$(F))))
 
@@ -64,6 +64,9 @@ $(foreach theme,$(THEMES),\
 
 %/gaplogo-notext256.png: %/gaplogo-notext.svg
 	svg2png --width=256 --height=256 $< $@
+
+%/gaplogo-notext512.png: %/gaplogo-notext.svg
+	svg2png --width=512 --height=512 $< $@
 
 .PHONY: all clean
 
