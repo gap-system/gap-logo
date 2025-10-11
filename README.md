@@ -12,61 +12,40 @@ such as PNG.
 ![Full GAP Logo](output/node-colors/light/gaplogo.svg)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![Reduced GAP Logo](output/node-colors/light/gaplogo-reduced.svg)
-
-Logo without text (e.g. for icons):
-
-| 32x32  | 512x512 |
-| ------------- | ------------- |
-| ![GAP Icon 32x32](output/node-colors/light/gaplogo-notext32.png "32x32") | ![GAP Icon 128x128](output/node-colors/light/gaplogo-notext512.png "512x512") |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![NoText GAP Logo](output/node-colors/light/gaplogo-notext.svg)
 
 ### Dark theme variant
 
 ![Full GAP Logo](output/node-colors/dark/gaplogo.svg)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![Reduced GAP Logo](output/node-colors/dark/gaplogo-reduced.svg)
-
-Logo without text (e.g. for icons):
-
-| 32x32  | 512x512 |
-| ------------- | ------------- |
-| ![GAP Icon 32x32](output/node-colors/dark/gaplogo-notext32.png "32x32") | ![GAP Icon 128x128](output/node-colors/dark/gaplogo-notext512.png "512x512") |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![NoText GAP Logo](output/node-colors/dark/gaplogo-notext.svg)
 
 ### Four color variant
 
 ![Full GAP Logo](output/node-colors/4c/gaplogo.svg)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![Reduced GAP Logo](output/node-colors/4c/gaplogo-reduced.svg)
-
-Logo without text (e.g. for icons):
-
-| 32x32  | 512x512 |
-| ------------- | ------------- |
-| ![GAP Icon 32x32](output/node-colors/4c/gaplogo-notext32.png "32x32") | ![GAP Icon 128x128](output/node-colors/4c/gaplogo-notext512.png "512x512") |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![NoText GAP Logo](output/node-colors/4c/gaplogo-notext.svg)
 
 ### Gray variant
 
 ![Full GAP Logo](output/node-colors/gray/gaplogo.svg)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![Reduced GAP Logo](output/node-colors/gray/gaplogo-reduced.svg)
-
-Logo without text (e.g. for icons):
-
-| 32x32  | 512x512 |
-| ------------- | ------------- |
-| ![GAP Icon 32x32](output/node-colors/gray/gaplogo-notext32.png "32x32") | ![GAP Icon 128x128](output/node-colors/gray/gaplogo-notext512.png "512x512") |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![NoText GAP Logo](output/node-colors/gray/gaplogo-notext.svg)
 
 ### Black & white variant
 
 ![Full GAP Logo](output/node-colors/bw/gaplogo.svg)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![Reduced GAP Logo](output/node-colors/bw/gaplogo-reduced.svg)
-
-Logo without text (e.g. for icons):
-
-| 32x32  | 512x512 |
-| ------------- | ------------- |
-| ![GAP Icon 32x32](output/node-colors/bw/gaplogo-notext32.png "32x32") | ![GAP Icon 128x128](output/node-colors/bw/gaplogo-notext512.png "512x512") |
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![NoText GAP Logo](output/node-colors/bw/gaplogo-notext.svg)
 
 ## Rationale
 
