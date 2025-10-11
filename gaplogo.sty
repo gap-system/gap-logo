@@ -11,11 +11,6 @@
 
 \usepackage{fontspec}
   \setmainfont{Ubuntu}
-%  \setmainfont{NationalPark}
-%  \setmainfont{HubotSans}[Weight=600]
-%  \setmainfont{Orbitron}
-%  \setmainfont{Jost}
-%  \setmainfont{Orbitron}
 
 \usepackage{tikz}
   \usetikzlibrary{positioning}
@@ -110,7 +105,7 @@
 \tikzset{dynkinarrowBC/.style={dynkinarrow}}
 \tikzset{dynkinarrowCA/.style={dynkinarrow}}
 
-\def \margin {22} % margin in angles, depends on the radius
+\def\margin {22} % margin in angles, depends on the radius
 \def\radius {10mm}  % radius for placement of the three outer nodes
 \def\radiusB {9mm}  % radius for the arrows (drawn as circle arcs)
 \def\noderadius {2.2mm}
@@ -121,13 +116,15 @@
 % line thickness
 \ifx\SmallIconMode\undefined
   \def\noderadius {2.4mm}
-  \tikzset{dynkinnode/.append style={line width=3pt}}
-  \tikzset{dynkinedge/.append style={line width=4pt}}
+  \def\nodelinewidth {3pt}
+  \def\edgelinewidth {4pt}
   \tikzset{dynkinarrow/.append style={line width=3pt, >={Stealth[inset=3pt, angle=60:13pt, bend, round]}}}
 \else
   % thicker lines for tiny rendering sizes
   \def\noderadius {2.56mm}
-  \tikzset{dynkinnode/.append style={line width=3pt}}
-  \tikzset{dynkinedge/.append style={line width=4.5pt}}
+  \def\nodelinewidth {3pt}
+  \def\edgelinewidth {4.5pt}
   \tikzset{dynkinarrow/.append style={line width=4pt, >={Stealth[inset=3pt, angle=70:16pt, bend, round]}}}
 \fi
+\tikzset{dynkinnode/.append style={line width=\nodelinewidth}}
+\tikzset{dynkinedge/.append style={line width=\edgelinewidth}}
