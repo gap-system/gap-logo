@@ -10,43 +10,43 @@ such as PNG.
 
 ### Light theme variant
 
-![Full GAP Logo](output/node-colors/light/gaplogo.svg)
+![Full GAP Logo](output/light/gaplogo.svg)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Reduced GAP Logo](output/node-colors/light/gaplogo-reduced.svg)
+![Reduced GAP Logo](output/light/gaplogo-reduced.svg)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![NoText GAP Logo](output/node-colors/light/gaplogo-notext.svg)
+![NoText GAP Logo](output/light/gaplogo-notext.svg)
 
 ### Dark theme variant
 
-![Full GAP Logo](output/node-colors/dark/gaplogo.svg)
+![Full GAP Logo](output/dark/gaplogo.svg)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Reduced GAP Logo](output/node-colors/dark/gaplogo-reduced.svg)
+![Reduced GAP Logo](output/dark/gaplogo-reduced.svg)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![NoText GAP Logo](output/node-colors/dark/gaplogo-notext.svg)
+![NoText GAP Logo](output/dark/gaplogo-notext.svg)
 
 ### Four color variant
 
-![Full GAP Logo](output/node-colors/4c/gaplogo.svg)
+![Full GAP Logo](output/4c/gaplogo.svg)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Reduced GAP Logo](output/node-colors/4c/gaplogo-reduced.svg)
+![Reduced GAP Logo](output/4c/gaplogo-reduced.svg)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![NoText GAP Logo](output/node-colors/4c/gaplogo-notext.svg)
+![NoText GAP Logo](output/4c/gaplogo-notext.svg)
 
 ### Gray variant
 
-![Full GAP Logo](output/node-colors/gray/gaplogo.svg)
+![Full GAP Logo](output/gray/gaplogo.svg)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Reduced GAP Logo](output/node-colors/gray/gaplogo-reduced.svg)
+![Reduced GAP Logo](output/gray/gaplogo-reduced.svg)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![NoText GAP Logo](output/node-colors/gray/gaplogo-notext.svg)
+![NoText GAP Logo](output/gray/gaplogo-notext.svg)
 
 ### Black & white variant
 
-![Full GAP Logo](output/node-colors/bw/gaplogo.svg)
+![Full GAP Logo](output/bw/gaplogo.svg)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Reduced GAP Logo](output/node-colors/bw/gaplogo-reduced.svg)
+![Reduced GAP Logo](output/bw/gaplogo-reduced.svg)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![NoText GAP Logo](output/node-colors/bw/gaplogo-notext.svg)
+![NoText GAP Logo](output/bw/gaplogo-notext.svg)
 
 ## Rationale
 

@@ -4,8 +4,6 @@
 # - svg2png
 TEXOPTS := --synctex=1 -shell-escape --file-line-error --halt-on-error
 
-DESIGNS = node-colors
-
 THEMES := light dark bw 4c gray # bw = black&white;  4c = four colors
 
 FILE = gaplogo.pdf gaplogo.svg gaplogo.png \
@@ -14,7 +12,7 @@ FILE = gaplogo.pdf gaplogo.svg gaplogo.png \
  gaplogo-reduced.pdf gaplogo-reduced.svg gaplogo-reduced.png \
  gaplogo-notext32.png gaplogo-notext512.png
 
-DST := $(foreach D,$(DESIGNS),$(foreach T,$(THEMES),$(foreach F,$(FILE),output/$(D)/$(T)/$(F))))
+DST := $(foreach T,$(THEMES),$(foreach F,$(FILE),output/$(T)/$(F)))
 
 TEXINPUTS = $(PWD)/:
 export TEXINPUTS
@@ -31,7 +29,7 @@ VARIANTS := \
   gaplogo-reduced:\def\ReducedMode{}
 
 define MAKE_GAPLOGO_RULE
-output/%/$(1)/$(2).pdf: variant-%.tex gaplogo.sty gaplogo-pic.tex
+output/$(1)/$(2).pdf: variant-node-colors.tex gaplogo.sty gaplogo-pic.tex
 	mkdir -p $$(@D)/.aux
 	lualatex $$(TEXOPTS) --jobname=$(2) --output-dir=$$(@D)/.aux "\def\Theme{$(1)}$(3)\input{$$<}"
 	mv $$(@D)/.aux/$(2).pdf $$@
