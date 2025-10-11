@@ -3,68 +3,9 @@
 
 \usepackage{gaplogo}
 
-% styles for the logo
-\ifx\Theme\BWTheme
-\else
-  \ifx\Theme\GrayTheme
-    %\tikzset{dynkinnodeZ/.append style={fill=Black}}
-    \tikzset{dynkinnodeA/.append style={fill=Gray}}
-    \tikzset{dynkinnodeB/.append style={fill=DarkGray}}
-    \tikzset{dynkinnodeC/.append style={fill=LightGray}}
-  \else
-    \tikzset{dynkinnodeZ/.append style={fill=Crimson}}
-    \ifx\Theme\FourColorTheme
-      \tikzset{dynkinnodeA/.append style={fill=Gray}}
-      \tikzset{dynkinnodeB/.append style={fill=DarkGray}}
-      \tikzset{dynkinnodeC/.append style={fill=LightGray}}
-    \else
-      \tikzset{dynkinnodeA/.append style={fill=ForestGreen}}
-      \tikzset{dynkinnodeB/.append style={fill=DodgerBlue}}
-      \tikzset{dynkinnodeC/.append style={fill=Gold}}
-    \fi
-  \fi
-\fi
-
-%\tikzset{dynkinarrow/.style={dashed, line width=2.5pt, Straight Barb-Straight Barb}}
-%\tikzset{dynkinarrow/.style={line width=2.5pt, Triangle-Triangle}}
-%\tikzset{dynkinarrow/.style={line width=2.5pt, {Straight Barb}-{Straight Barb}}}
-%\tikzset{dynkinarrow/.style={line cap=round, dash pattern=on 0pt off 5pt,line width=3.0pt}}
-%\tikzset{dynkinarrow/.style={line width=3.0pt}}
-
-% line thickness
-\ifx\SmallIconMode\undefined
-  \def\noderadius {2.4mm}
-  \tikzset{dynkinnode/.append style={line width=3pt}}
-  \tikzset{dynkinedge/.append style={line width=4pt}}
-  \tikzset{dynkinarrow/.append style={line width=3pt, >={Stealth[inset=3pt, angle=60:13pt, bend, round]}}}
-\else
-  % thicker lines for tiny rendering sizes
-  \def\noderadius {2.56mm}
-  \tikzset{dynkinnode/.append style={line width=3pt}}
-  \tikzset{dynkinedge/.append style={line width=4.5pt}}
-  \tikzset{dynkinarrow/.append style={line width=4pt, >={Stealth[inset=3pt, angle=70:16pt, bend, round]}}}
-\fi
-
 \begin{document}
 
 \begin{tikzpicture}
-  \def \margin {22} % margin in angles, depends on the radius
-
-  % 'protected area' behind the logo
-%
-%  \coordinate (X) at (0,0) {};
-%%  \path[fill=white] (X) circle[radius=13.1mm];
-%  \path[fill=white] (X) circle[radius=14mm];
-%  \ifx\NoTextMode\undefined
-%    \ifx\ReducedMode\undefined
-%      \draw[draw opacity=0,fill=white] (0,-14mm) rectangle (55mm,14mm);
-%    \else
-%      \draw[draw opacity=0,fill=white] (0,-14mm) rectangle (21mm,14mm);
-%    \fi
-%  \else
-%    % nothing
-%  \fi
-
   \input{gaplogo-pic.tex}
 \end{tikzpicture}
 
