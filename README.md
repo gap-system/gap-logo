@@ -1,9 +1,10 @@
 # GAP Logo proposal
 
-This is a proposal for a logo for the [GAP computer algebra system](https://www.gap-system.org).
+This is the logo of the [GAP computer algebra system](https://www.gap-system.org).
 
 Source code is (lua)latex using TiKZ, which produces a PDF that can then be converted to other formats
 such as PNG. 
+
 
 ## Preview
 
@@ -115,4 +116,25 @@ the end found the look of the base font superior for our purposes.
 
 ## License
 
-To be determined.
+The GAP logo is © Max Horn and a trademark of the GAP project.
+
+The logo licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
+### Academic & Educational Use Waiver
+
+For uses in **academic, educational, or research contexts**, attribution is **not required** if it is clear from context that the logo refers to the GAP computer algebra system. Examples include:
+
+- Scientific posters or presentations referencing GAP.
+- Slides, lectures, or demonstrations in courses at any level (high school, university, workshops).
+- Publications, articles, or tutorials discussing or teaching GAP.
+
+In these cases, **the context itself counts as sufficient attribution**. The main goal is to ensure it is clear the logo represents GAP.
+
+### General License Terms
+
+Outside of the academic/educational contexts described above, the normal **CC BY-SA 4.0** terms apply:
+
+- Attribution is required.
+- Any derivatives must be shared under the same license.
+
+For more details, see the official CC BY-SA 4.0 license: [https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/).
