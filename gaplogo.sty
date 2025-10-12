@@ -118,13 +118,16 @@
   \def\noderadius {2.4mm}
   \def\nodelinewidth {3pt}
   \def\edgelinewidth {4pt}
-  \tikzset{dynkinarrow/.append style={line width=3pt, >={Stealth[inset=3pt, angle=60:13pt, bend, round]}}}
+  \def\arrowlinewidth {3pt}
+  \tikzset{dynkinarrow/.append style={>={Stealth[inset=3pt, angle=60:13pt, bend, round]}}}
 \else
   % thicker lines for tiny rendering sizes
   \def\noderadius {2.56mm}
   \def\nodelinewidth {3pt}
   \def\edgelinewidth {4.5pt}
-  \tikzset{dynkinarrow/.append style={line width=4pt, >={Stealth[inset=3pt, angle=70:16pt, bend, round]}}}
+  \def\arrowlinewidth {4pt}
+  \tikzset{dynkinarrow/.append style={>={Stealth[inset=3pt, angle=70:16pt, bend, round]}}}
 \fi
 \tikzset{dynkinnode/.append style={line width=\nodelinewidth}}
 \tikzset{dynkinedge/.append style={line width=\edgelinewidth}}
+\tikzset{dynkinarrow/.append style={line width=\arrowlinewidth}}
