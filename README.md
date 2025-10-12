@@ -118,7 +118,7 @@ the end found the look of the base font superior for our purposes.
 
 The GAP logo is © Max Horn and a trademark of the GAP project.
 
-The logo licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+The logo is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 ### Academic & Educational Use Waiver
 
@@ -137,4 +137,4 @@ Outside of the academic/educational contexts described above, the normal **CC BY
 - Attribution is required.
 - Any derivatives must be shared under the same license.
 
-For more details, see the official CC BY-SA 4.0 license: [https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/).
+For more details, see the official CC BY-SA 4.0 license: <https://creativecommons.org/licenses/by-sa/4.0/>.
