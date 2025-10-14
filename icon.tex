@@ -1,0 +1,118 @@
+% !TEX TS-program = lualatex
+\documentclass[tikz,border=0.4mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shadows.blur}
+
+\usepackage{gaplogo}
+
+\def\NoTextMode{}
+
+\begin{document}
+\begin{tikzpicture}
+
+% === Parameters ===
+\def\discradius{16mm}        % disc radius
+
+% shadow style
+\tikzset{discShadow/.style={blur shadow={
+            shadow blur steps=10,
+            shadow xshift=0pt,
+            shadow yshift=-0.7pt,
+            shadow blur radius=1.2pt,
+            shadow opacity=40}}}
+
+\tikzset{logoShadow/.style={blur shadow={
+            shadow blur steps=10,
+            shadow xshift=0pt,
+            shadow yshift=-1pt,
+            shadow blur radius=1.2pt,
+            shadow opacity=40}}}
+
+\definecolor{outerGradientA}{gray}{0.8}
+\definecolor{outerGradientB}{gray}{0.999}
+
+\definecolor{innerGradientA}{gray}{0.8}
+\definecolor{innerGradientB}{gray}{1.0}
+
+% Background disc with linear gradient, and blurred shadow
+\shade[shading=axis,
+       left color=outerGradientA, right color=outerGradientA, % both sides same
+       top color=outerGradientA, bottom color=outerGradientB,
+       shading angle=180,
+       discShadow]
+  (0,0) circle (\discradius);
+
+% Small disc with reverse linear gradient, to give the impression of a border
+\shade[shading=axis,
+       left color=innerGradientB, right color=innerGradientB,
+       top color=innerGradientB, bottom color=innerGradientA,
+       shading angle=180]
+  (0,0) circle (\discradius*0.92);
+
+% TODO: Render shadows for the GAP logo
+\begin{scope}[yshift=-0mm]
+  \coordinate (A) at (    \rotationangle:\radius) {};
+  \coordinate (B) at (120+\rotationangle:\radius) {};
+  \coordinate (C) at (240+\rotationangle:\radius) {};
+  \coordinate (Z) at (0,0) {};
+
+  % node shadows
+  \path[logoShadow] (Z) circle[radius=\noderadius+1.1pt];
+  \path[logoShadow] (A) circle[radius=\noderadius+1.1pt];
+  \path[logoShadow] (B) circle[radius=\noderadius+1.1pt];
+  \path[logoShadow] (C) circle[radius=\noderadius+1.1pt];
+
+  % edge and arrow shadows
+  \foreach \angle in {0,120,240} {
+    % edge
+    \path[logoShadow,rotate around={\angle+\rotationangle:(Z)}]
+        (Z) ++(0,-\edgelinewidth/2) rectangle ++(\radius,\edgelinewidth);
+
+    % double-arrows
+    % first some setup...
+    \tikzmath{
+       \startangle = \angle+\rotationangle+\margin+17;
+       \endangle = \angle+120+\rotationangle-\margin-17;
+       \width = \arrowlinewidth/2;
+    }
+    % ... now draw the line part
+    \path[logoShadow]
+        (\startangle:\radiusB+\width) arc (\startangle:\endangle:\radiusB+\width) --
+        (\endangle:\radiusB-\width) arc (\endangle:\startangle:\radiusB-\width) --
+        cycle;
+
+    % crude approximation of the first arrow
+    \path[logoShadow]
+        (\startangle-0.9:\radiusB)
+        -- (\startangle+3:\radiusB+2.6*\width)
+        to [bend left=60] (\startangle+0.5:\radiusB+3.4*\width)
+        to [bend left=7] (\startangle-16.3:\radiusB+0.5*\width)
+        to [bend left] (\startangle-16.3:\radiusB-0.5*\width)
+        to [bend right=7] (\startangle:\radiusB-3.35*\width)
+        to [bend left=90] (\startangle+3.5:\radiusB-2.6*\width)
+        to [bend left=5] cycle
+        ;
+
+    % crude approximation of the second arrow
+    \path[logoShadow]
+        (\endangle+0.9:\radiusB)
+        -- (\endangle-3:\radiusB+2.6*\width)
+        to [bend right=60] (\endangle-0.5:\radiusB+3.4*\width)
+        to [bend right=7] (\endangle+16.3:\radiusB+0.5*\width)
+        to [bend right] (\endangle+16.3:\radiusB-0.5*\width)
+        to [bend left=7] (\endangle:\radiusB-3.35*\width)
+        to [bend right=90] (\endangle-3.5:\radiusB-2.6*\width)
+        to [bend right=5] cycle
+        ;
+  }
+
+
+\end{scope}
+
+% Render the GAP logo atop
+\begin{scope}
+\input{gaplogo-pic.tex}
+\end{scope}
+
+\end{tikzpicture}
+\end{document}

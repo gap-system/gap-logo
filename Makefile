@@ -14,6 +14,8 @@ FILE = gaplogo.pdf gaplogo.svg gaplogo.png \
 
 DST := $(foreach T,$(THEMES),$(foreach F,$(FILE),output/$(T)/$(F)))
 
+DST += output/icon/icon.pdf output/icon/icon.png output/icon/icon.ico
+
 TEXINPUTS = $(PWD)/:
 export TEXINPUTS
 
@@ -65,6 +67,19 @@ $(foreach theme,$(THEMES),\
 
 %/gaplogo-notext512.png: %/gaplogo-notext.svg
 	svg2png --width=512 --height=512 $< $@
+
+
+output/icon/icon.pdf: icon.tex gaplogo.sty gaplogo-pic.tex
+	mkdir -p $(@D)/.aux
+	lualatex $(TEXOPTS) --jobname=icon --output-dir=$(@D)/.aux $<
+	mv $(@D)/.aux/icon.pdf $@
+
+output/icon/icon.png: output/icon/icon.pdf
+	pdftocairo -png -transp -singlefile -scale-to 512 $< $(basename $@ .png)
+
+output/icon/icon.ico: output/icon/icon.png
+	magick $< $@
+
 
 .PHONY: all clean
 
