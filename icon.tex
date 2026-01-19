@@ -31,8 +31,8 @@
 \definecolor{outerGradientA}{gray}{0.8}
 \definecolor{outerGradientB}{gray}{0.999}
 
-\definecolor{innerGradientA}{gray}{0.8}
-\definecolor{innerGradientB}{gray}{1.0}
+\definecolor{innerGradientA}{gray}{0.85}
+\definecolor{innerGradientB}{gray}{0.95}
 
 % Background disc with linear gradient, and blurred shadow
 \shade[shading=axis,
@@ -45,7 +45,7 @@
 % Small disc with reverse linear gradient, to give the impression of a border
 \shade[shading=axis,
        left color=innerGradientB, right color=innerGradientB,
-       top color=innerGradientB, bottom color=innerGradientA,
+       top color=innerGradientA, bottom color=innerGradientB,
        shading angle=180]
   (0,0) circle (\discradius*0.92);
 
